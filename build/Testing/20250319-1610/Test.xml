@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Site BuildName="Darwin-g++-14"
+	BuildStamp="20250319-1610-Experimental"
+	Name="IC-FVFKK0XP1WGC"
+	Generator="ctest-3.31.6"
+	CompilerName="/opt/homebrew/bin/g++-14"
+	CompilerVersion="14.2.0"
+	OSName="macOS"
+	Hostname="IC-FVFKK0XP1WGC"
+	OSRelease="15.3.2"
+	OSVersion="24D81"
+	OSPlatform="arm64"
+	Is64Bits="1"
+	VendorString="Apple"
+	VendorID="Apple"
+	FamilyID="0"
+	ModelID="0"
+	ModelName="Apple M1"
+	ProcessorCacheSize="131072"
+	NumberOfLogicalCPU="8"
+	NumberOfPhysicalCPU="8"
+	TotalVirtualMemory="5120"
+	TotalPhysicalMemory="16384"
+	LogicalProcessorsPerPhysical="8"
+	ProcessorClockFrequency="0"
+	>
+	<Testing>
+		<StartDateTime>Mar 19 20:18 GMT</StartDateTime>
+		<StartTestTime>1742415528</StartTestTime>
+		<TestList/>
+		<EndDateTime>Mar 19 20:18 GMT</EndDateTime>
+		<EndTestTime>1742415528</EndTestTime>
+		<ElapsedMinutes>0</ElapsedMinutes>
+	</Testing>
+</Site>

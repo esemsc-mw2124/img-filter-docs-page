@@ -1,0 +1,21 @@
+/**
+ * @mainpage Image Filtering Library
+ *
+ * @section intro_sec Introduction
+ * The Image Filtering Library provides a set of classes and functions for applying various 
+ * image processing techniques to 2D images and 3D volumes. It includes support for common 
+ * filters such as blurring, edge detection, sharpening, and projection operations.
+ *
+ * @section features_sec Features
+ * - Apply different types of 2D filters (Blur, Edge Detection, Sharpening, etc.).
+ * - Perform 3D volume filtering using Gaussian and Median blur.
+ * - Extract 2D slices from 3D volumetric data.
+ * - Perform intensity projections (max, min, mean, median) on 3D volumes.
+ * - Convert images between different color spaces (RGB, HSV, HSL).
+ *
+ * GitHub repository: https://github.com/ese-ada-lovelace-2024/advanced-programming-group-bisection
+ *
+ * @section author_sec Author
+ * Developed by team Bisection
+ *
+ */
