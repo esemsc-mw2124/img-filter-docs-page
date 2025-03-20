@@ -1,0 +1,106 @@
+\doxysection{Edge\+Detector Class Reference}
+\hypertarget{class_edge_detector}{}\label{class_edge_detector}\index{EdgeDetector@{EdgeDetector}}
+
+
+A filter class for applying various edge detection techniques on images.  
+
+
+
+
+{\ttfamily \#include $<$Edge\+Detector.\+h$>$}
+
+Inheritance diagram for Edge\+Detector\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_edge_detector}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_edge_detector_aa96872e3ccf6ae3f976b21bc04a4eb5d}{Edge\+Detector}} (\mbox{\hyperlink{_edge_detector_8h_aab61f22815e3a7f08a93c6ccafb9bef8}{Edge\+Detection\+Type}} type)
+\begin{DoxyCompactList}\small\item\em Constructs an \doxylink{class_edge_detector}{Edge\+Detector} filter with the specified type. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_edge_detector_a9d6647da2985d2f0c1ead0810e26f85e}{apply}} (\mbox{\hyperlink{class_image}{Image}} \&img) override
+\begin{DoxyCompactList}\small\item\em Applies the edge detection filter to an image. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_edge_detector_a9506f2b62839043ea84f1230f36ed407}{apply}} (\mbox{\hyperlink{class_volume}{Volume}} \&vol) override
+\begin{DoxyCompactList}\small\item\em Throws an exception, as 3D volume edge detection is not supported. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A filter class for applying various edge detection techniques on images. 
+
+Supports multiple edge detection algorithms, including Sobel, Prewitt, Scharr, and Roberts Cross. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_edge_detector_aa96872e3ccf6ae3f976b21bc04a4eb5d}\index{EdgeDetector@{EdgeDetector}!EdgeDetector@{EdgeDetector}}
+\index{EdgeDetector@{EdgeDetector}!EdgeDetector@{EdgeDetector}}
+\doxysubsubsection{\texorpdfstring{EdgeDetector()}{EdgeDetector()}}
+{\footnotesize\ttfamily \label{class_edge_detector_aa96872e3ccf6ae3f976b21bc04a4eb5d} 
+Edge\+Detector\+::\+Edge\+Detector (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_edge_detector_8h_aab61f22815e3a7f08a93c6ccafb9bef8}{Edge\+Detection\+Type}}}]{type}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructs an \doxylink{class_edge_detector}{Edge\+Detector} filter with the specified type. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & The type of edge detection to apply. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_edge_detector_a9d6647da2985d2f0c1ead0810e26f85e}\index{EdgeDetector@{EdgeDetector}!apply@{apply}}
+\index{apply@{apply}!EdgeDetector@{EdgeDetector}}
+\doxysubsubsection{\texorpdfstring{apply()}{apply()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_edge_detector_a9d6647da2985d2f0c1ead0810e26f85e} 
+void Edge\+Detector\+::apply (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_image}{Image}} \&}]{img}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Applies the edge detection filter to an image. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em img} & The image to process. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::invalid\+\_\+argument} & If an unknown edge detection type is provided. \\
+\hline
+\end{DoxyExceptions}
+
+
+Implements \mbox{\hyperlink{class_filter_a9d4dd1ead47bb006091b941063e5898f}{Filter}}.
+
+\Hypertarget{class_edge_detector_a9506f2b62839043ea84f1230f36ed407}\index{EdgeDetector@{EdgeDetector}!apply@{apply}}
+\index{apply@{apply}!EdgeDetector@{EdgeDetector}}
+\doxysubsubsection{\texorpdfstring{apply()}{apply()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_edge_detector_a9506f2b62839043ea84f1230f36ed407} 
+void Edge\+Detector\+::apply (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_volume}{Volume}} \&}]{vol}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Throws an exception, as 3D volume edge detection is not supported. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vol} & The volume to which the edge detection cannot be applied. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error} & Always throws since 3D edge detection is not supported. \\
+\hline
+\end{DoxyExceptions}
+
+
+Implements \mbox{\hyperlink{class_filter_a4fb0a1b8a0d4e16b166a2c83b19315dd}{Filter}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/2\+D/\mbox{\hyperlink{_edge_detector_8h}{Edge\+Detector.\+h}}\item 
+src/2\+D/\mbox{\hyperlink{_edge_detector_8cpp}{Edge\+Detector.\+cpp}}\end{DoxyCompactItemize}

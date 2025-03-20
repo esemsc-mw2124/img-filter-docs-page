@@ -1,0 +1,134 @@
+\doxysection{Projection Class Reference}
+\hypertarget{class_projection}{}\label{class_projection}\index{Projection@{Projection}}
+
+
+A class for performing intensity projection operations on 3D volumes.  
+
+
+
+
+{\ttfamily \#include $<$Projection.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_projection_ac230bd788a2b745e340c50cb052b6e89}{Projection}} ()=default
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_projection_a33d18e9ba1bbeb249e975ec9ea201ef7}{\texorpdfstring{$\sim$}{\string~}\+Projection}} ()=default
+\begin{DoxyCompactList}\small\item\em Default destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{class_projection_a21c75bd1cae80f473af74f146a81319a}{max\+Intensity\+Projection}} (const \mbox{\hyperlink{class_volume}{Volume}} \&volume, \mbox{\hyperlink{class_image}{Image}} \&output)
+\begin{DoxyCompactList}\small\item\em Computes the maximum intensity projection of a volume. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_projection_a81a76ea55757e251a8e8800774a2df68}{min\+Intensity\+Projection}} (const \mbox{\hyperlink{class_volume}{Volume}} \&volume, \mbox{\hyperlink{class_image}{Image}} \&output)
+\begin{DoxyCompactList}\small\item\em Computes the minimum intensity projection of a volume. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_projection_a26d7705fbf35aa257a8ae0ede5dd951a}{mean\+Intensity\+Projection}} (const \mbox{\hyperlink{class_volume}{Volume}} \&volume, \mbox{\hyperlink{class_image}{Image}} \&output)
+\begin{DoxyCompactList}\small\item\em Computes the mean intensity projection of a volume. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_projection_ac50f691582237a51fb80b9bbeffce4f8}{median\+Intensity\+Projection}} (const \mbox{\hyperlink{class_volume}{Volume}} \&volume, \mbox{\hyperlink{class_image}{Image}} \&output)
+\begin{DoxyCompactList}\small\item\em Computes the median intensity projection of a volume. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A class for performing intensity projection operations on 3D volumes. 
+
+Supports maximum, minimum, mean, and median intensity projections. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_projection_ac230bd788a2b745e340c50cb052b6e89}\index{Projection@{Projection}!Projection@{Projection}}
+\index{Projection@{Projection}!Projection@{Projection}}
+\doxysubsubsection{\texorpdfstring{Projection()}{Projection()}}
+{\footnotesize\ttfamily \label{class_projection_ac230bd788a2b745e340c50cb052b6e89} 
+Projection\+::\+Projection (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Default constructor. 
+
+\Hypertarget{class_projection_a33d18e9ba1bbeb249e975ec9ea201ef7}\index{Projection@{Projection}!````~Projection@{\texorpdfstring{$\sim$}{\string~}Projection}}
+\index{````~Projection@{\texorpdfstring{$\sim$}{\string~}Projection}!Projection@{Projection}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Projection()}{\string~Projection()}}
+{\footnotesize\ttfamily \label{class_projection_a33d18e9ba1bbeb249e975ec9ea201ef7} 
+Projection\+::\texorpdfstring{$\sim$}{\string~}\+Projection (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Default destructor. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_projection_a21c75bd1cae80f473af74f146a81319a}\index{Projection@{Projection}!maxIntensityProjection@{maxIntensityProjection}}
+\index{maxIntensityProjection@{maxIntensityProjection}!Projection@{Projection}}
+\doxysubsubsection{\texorpdfstring{maxIntensityProjection()}{maxIntensityProjection()}}
+{\footnotesize\ttfamily \label{class_projection_a21c75bd1cae80f473af74f146a81319a} 
+void Projection\+::max\+Intensity\+Projection (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_volume}{Volume}} \&}]{volume}{, }\item[{\mbox{\hyperlink{class_image}{Image}} \&}]{output}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Computes the maximum intensity projection of a volume. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em volume} & The input 3D volume. \\
+\hline
+{\em output} & The output 2D image. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_projection_a26d7705fbf35aa257a8ae0ede5dd951a}\index{Projection@{Projection}!meanIntensityProjection@{meanIntensityProjection}}
+\index{meanIntensityProjection@{meanIntensityProjection}!Projection@{Projection}}
+\doxysubsubsection{\texorpdfstring{meanIntensityProjection()}{meanIntensityProjection()}}
+{\footnotesize\ttfamily \label{class_projection_a26d7705fbf35aa257a8ae0ede5dd951a} 
+void Projection\+::mean\+Intensity\+Projection (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_volume}{Volume}} \&}]{volume}{, }\item[{\mbox{\hyperlink{class_image}{Image}} \&}]{output}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Computes the mean intensity projection of a volume. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em volume} & The input 3D volume. \\
+\hline
+{\em output} & The output 2D image. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_projection_ac50f691582237a51fb80b9bbeffce4f8}\index{Projection@{Projection}!medianIntensityProjection@{medianIntensityProjection}}
+\index{medianIntensityProjection@{medianIntensityProjection}!Projection@{Projection}}
+\doxysubsubsection{\texorpdfstring{medianIntensityProjection()}{medianIntensityProjection()}}
+{\footnotesize\ttfamily \label{class_projection_ac50f691582237a51fb80b9bbeffce4f8} 
+void Projection\+::median\+Intensity\+Projection (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_volume}{Volume}} \&}]{volume}{, }\item[{\mbox{\hyperlink{class_image}{Image}} \&}]{output}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Computes the median intensity projection of a volume. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em volume} & The input 3D volume. \\
+\hline
+{\em output} & The output 2D image. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_projection_a81a76ea55757e251a8e8800774a2df68}\index{Projection@{Projection}!minIntensityProjection@{minIntensityProjection}}
+\index{minIntensityProjection@{minIntensityProjection}!Projection@{Projection}}
+\doxysubsubsection{\texorpdfstring{minIntensityProjection()}{minIntensityProjection()}}
+{\footnotesize\ttfamily \label{class_projection_a81a76ea55757e251a8e8800774a2df68} 
+void Projection\+::min\+Intensity\+Projection (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_volume}{Volume}} \&}]{volume}{, }\item[{\mbox{\hyperlink{class_image}{Image}} \&}]{output}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Computes the minimum intensity projection of a volume. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em volume} & The input 3D volume. \\
+\hline
+{\em output} & The output 2D image. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\mbox{\hyperlink{_projection_8h}{Projection.\+h}}\item 
+src/\mbox{\hyperlink{_projection_8cpp}{Projection.\+cpp}}\end{DoxyCompactItemize}

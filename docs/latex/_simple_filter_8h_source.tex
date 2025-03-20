@@ -1,0 +1,100 @@
+\doxysection{Simple\+Filter.\+h}
+\hypertarget{_simple_filter_8h_source}{}\label{_simple_filter_8h_source}\index{src/2D/SimpleFilter.h@{src/2D/SimpleFilter.h}}
+\mbox{\hyperlink{_simple_filter_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ @file\ simpleFilter.h}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ @brief\ Header\ file\ for\ simple\ image\ filtering\ techniques.}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ Group\ name:\ Bisection}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ }}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *\ @authors}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *\ -\/\ Vera\ Fan\ (esemsc-\/3f9bc883)}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *\ -\/\ Jiawei\ Zhan\ (esemsc-\/jz1224)}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *\ -\/\ Simranjeet\ Singh\ (esemsc-\/ss2524)}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ -\/\ George\ Sokolik\ (esemsc-\/gts124)}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ -\/\ Qihan\ Zhang\ (esemsc-\/qz624)}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *\ -\/\ Yixiao\ Zheng\ (esemsc-\/yz1824)}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ -\/\ Miles\ Weberman\ (esemsc-\/mw2124)}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ ******************************************************************************/}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#ifndef\ SIMPLEFILTER\_H}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#define\ SIMPLEFILTER\_H}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_image_8h}{../Image.h}}"{}}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_filter_8h}{../Filter.h}}"{}}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ <stdexcept>}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{_simple_filter_8h_ac9407f0c2ed7a5fc7eddb839a8680680}{SimpleFilterType}}\ \{}
+\DoxyCodeLine{00024\ \ \ \ \ \mbox{\hyperlink{_simple_filter_8h_ac9407f0c2ed7a5fc7eddb839a8680680a4f90b9cafa6fec5c0bd8cb1df7281693}{GrayScale}},}
+\DoxyCodeLine{00025\ \ \ \ \ \mbox{\hyperlink{_simple_filter_8h_ac9407f0c2ed7a5fc7eddb839a8680680a38aeaf62bcf961434d237b6a5bb68a93}{BrightnessDullness}},}
+\DoxyCodeLine{00026\ \ \ \ \ \mbox{\hyperlink{_simple_filter_8h_ac9407f0c2ed7a5fc7eddb839a8680680a0361daa6e6a0d66796e3af8c0f25b23f}{HistogramEqualization}},}
+\DoxyCodeLine{00027\ \ \ \ \ \mbox{\hyperlink{_simple_filter_8h_ac9407f0c2ed7a5fc7eddb839a8680680a2a63f555989152ba866b43a1faacd680}{Threshold}},}
+\DoxyCodeLine{00028\ \ \ \ \ \mbox{\hyperlink{_simple_filter_8h_ac9407f0c2ed7a5fc7eddb839a8680680abf60f93e6be31f769be21087310555ab}{SaltPepperNoise}}}
+\DoxyCodeLine{00029\ \};}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_simple_filter_parameters}{SimpleFilterParameters}}\ \{}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{struct_simple_filter_parameters_a73b01791c706b1aabd77f4b0c13b79a9}{brightness}};}
+\DoxyCodeLine{00033\ \ \ \ \ std::string\ \mbox{\hyperlink{struct_simple_filter_parameters_af16f477b4aea3e434500dc1774d6e683}{colorSpace}};}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{struct_simple_filter_parameters_ac1e7ca0a75134b63080abd4dd7d5bef8}{threshold}};}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_simple_filter_parameters_a6c27f51ff7c31455ea6eb89419c7dea1}{percentage}};}
+\DoxyCodeLine{00036\ \};}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00046\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_simple_filter_a5913f2ab2391196268c85ece3532739d}{SimpleFilter}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_filter}{Filter}}\ \{}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_simple_filter_a5913f2ab2391196268c85ece3532739d}{SimpleFilter}}(\mbox{\hyperlink{_simple_filter_8h_ac9407f0c2ed7a5fc7eddb839a8680680}{SimpleFilterType}}\ type,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_simple_filter_parameters}{SimpleFilterParameters}}\&\ params)\ }
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ :\ type(type),\ params(params)\ \{\}}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_simple_filter_a622e3f663a42b7a2e41dcc77727e3c8d}{SimpleFilter}}(\mbox{\hyperlink{_simple_filter_8h_ac9407f0c2ed7a5fc7eddb839a8680680}{SimpleFilterType}}\ type)\ }
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ :\ type(type),\ params(\{0.0f,\ \textcolor{stringliteral}{"{}"{}},\ 0.0f,\ 0\})\ \{\}}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_simple_filter_ae3816d4b633905b052a4185d3700633b}{apply}}(\mbox{\hyperlink{class_image}{Image}}\&\ img)\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (type)\{}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{_simple_filter_8h_ac9407f0c2ed7a5fc7eddb839a8680680a4f90b9cafa6fec5c0bd8cb1df7281693}{SimpleFilterType::GrayScale}}:}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ applyGrayScale(img);}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{_simple_filter_8h_ac9407f0c2ed7a5fc7eddb839a8680680a38aeaf62bcf961434d237b6a5bb68a93}{SimpleFilterType::BrightnessDullness}}:}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ applyBrightnessDullness(img,\ params.brightness);}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{_simple_filter_8h_ac9407f0c2ed7a5fc7eddb839a8680680a0361daa6e6a0d66796e3af8c0f25b23f}{SimpleFilterType::HistogramEqualization}}:}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ applyHistogramEqualization(img,\ params.colorSpace);}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{_simple_filter_8h_ac9407f0c2ed7a5fc7eddb839a8680680a2a63f555989152ba866b43a1faacd680}{SimpleFilterType::Threshold}}:}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ applyThreshold(img,\ params.threshold,\ params.colorSpace);}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{_simple_filter_8h_ac9407f0c2ed7a5fc7eddb839a8680680abf60f93e6be31f769be21087310555ab}{SimpleFilterType::SaltPepperNoise}}:}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ applySaltPepperNoise(img,\ params.percentage);}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::invalid\_argument(\textcolor{stringliteral}{"{}Unknown\ edge\ detection\ type"{}});}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_simple_filter_a1bff7d27c852e3713f418c4213926c62}{apply}}(\mbox{\hyperlink{class_volume}{Volume}}\&\ vol)\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}SimpleFilter\ does\ not\ support\ 3D\ volumes."{}});}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_simple_filter_ab7f0777183c1a51a929f61e78f583a5c}{calculateMeanBrightness}}(\mbox{\hyperlink{class_image}{Image}}\&\ img);}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00106\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_simple_filter_8h_ac9407f0c2ed7a5fc7eddb839a8680680}{SimpleFilterType}}\ type;\ }
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_simple_filter_parameters}{SimpleFilterParameters}}\ params;\ }
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ applyGrayScale(\mbox{\hyperlink{class_image}{Image}}\&\ img);}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ applyBrightnessDullness(\mbox{\hyperlink{class_image}{Image}}\&\ img,\ \textcolor{keywordtype}{float}\ brightness\ =\ 1000);}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ applyHistogramEqualization(\mbox{\hyperlink{class_image}{Image}}\&\ img,\ \textcolor{keyword}{const}\ std::string\&\ colorSpace\ =\ \textcolor{stringliteral}{"{}HSV"{}});}
+\DoxyCodeLine{00129\ }
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ applyThreshold(\mbox{\hyperlink{class_image}{Image}}\&\ img,\ \textcolor{keywordtype}{float}\ threshold,\ \textcolor{keyword}{const}\ std::string\ \&colorSpace\ =\ \textcolor{stringliteral}{"{}HSV"{}});}
+\DoxyCodeLine{00137\ }
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ applySaltPepperNoise(\mbox{\hyperlink{class_image}{Image}}\&\ img,\ \textcolor{keywordtype}{int}\ percentage);}
+\DoxyCodeLine{00144\ }
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Helper\ functions}}
+\DoxyCodeLine{00146\ }
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ applyHistogramEqualizationForChannel(\mbox{\hyperlink{class_image}{Image}}\&\ img,\ \textcolor{keywordtype}{int}\ width,\ \textcolor{keywordtype}{int}\ height,\ \textcolor{keywordtype}{int}\ pixelSize,\ \textcolor{keywordtype}{int}\ channelIndex);}
+\DoxyCodeLine{00156\ \};}
+\DoxyCodeLine{00157\ }
+\DoxyCodeLine{00158\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ SIMPLEFILTER\_H}}
+
+\end{DoxyCode}

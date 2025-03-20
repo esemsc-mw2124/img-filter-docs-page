@@ -1,0 +1,75 @@
+\doxysection{src/\+Image.h File Reference}
+\hypertarget{_image_8h}{}\label{_image_8h}\index{src/Image.h@{src/Image.h}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include $<$stdexcept$>$}\newline
+{\ttfamily \#include $<$cstring$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_image}{Image}}
+\begin{DoxyCompactList}\small\item\em A class for representing and manipulating images. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{_image_8h_a6140c45a6cc8b72c3676cd6776ccfc3d}{Image\+State}} \{ \newline
+\mbox{\hyperlink{_image_8h_a6140c45a6cc8b72c3676cd6776ccfc3da48bf014c704c9eaae100a98006a37bf7}{GRAY}}
+, \mbox{\hyperlink{_image_8h_a6140c45a6cc8b72c3676cd6776ccfc3dab6cbcd616fa99094503d8846815d34ef}{GRAYA}}
+, \mbox{\hyperlink{_image_8h_a6140c45a6cc8b72c3676cd6776ccfc3da889574aebacda6bfd3e534e2b49b8028}{RGB}}
+, \mbox{\hyperlink{_image_8h_a6140c45a6cc8b72c3676cd6776ccfc3daea3495a278957dc58165e48a8945469f}{RGBA}}
+, \newline
+\mbox{\hyperlink{_image_8h_a6140c45a6cc8b72c3676cd6776ccfc3da6878315e698a7cbfd0d97d77f6619c5f}{HSV}}
+, \mbox{\hyperlink{_image_8h_a6140c45a6cc8b72c3676cd6776ccfc3da855c12a901e2564e19adcd8706ab867e}{HSL}}
+, \mbox{\hyperlink{_image_8h_a6140c45a6cc8b72c3676cd6776ccfc3da488f161e4a2914686506928a568a39b2}{HSVA}}
+, \mbox{\hyperlink{_image_8h_a6140c45a6cc8b72c3676cd6776ccfc3da93f128456c0fa054ab83717ed04c8e62}{HSLA}}
+, \newline
+\mbox{\hyperlink{_image_8h_a6140c45a6cc8b72c3676cd6776ccfc3da696b031073e74bf2cb98e5ef201d4aa3}{UNKNOWN}}
+ \}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{_image_8h_a6140c45a6cc8b72c3676cd6776ccfc3d}\index{Image.h@{Image.h}!ImageState@{ImageState}}
+\index{ImageState@{ImageState}!Image.h@{Image.h}}
+\doxysubsubsection{\texorpdfstring{ImageState}{ImageState}}
+{\footnotesize\ttfamily \label{_image_8h_a6140c45a6cc8b72c3676cd6776ccfc3d} 
+enum class \mbox{\hyperlink{_image_8h_a6140c45a6cc8b72c3676cd6776ccfc3d}{Image\+State}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GRAY@{GRAY}!Image.h@{Image.h}}\index{Image.h@{Image.h}!GRAY@{GRAY}}}\Hypertarget{_image_8h_a6140c45a6cc8b72c3676cd6776ccfc3da48bf014c704c9eaae100a98006a37bf7}\label{_image_8h_a6140c45a6cc8b72c3676cd6776ccfc3da48bf014c704c9eaae100a98006a37bf7} 
+GRAY&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GRAYA@{GRAYA}!Image.h@{Image.h}}\index{Image.h@{Image.h}!GRAYA@{GRAYA}}}\Hypertarget{_image_8h_a6140c45a6cc8b72c3676cd6776ccfc3dab6cbcd616fa99094503d8846815d34ef}\label{_image_8h_a6140c45a6cc8b72c3676cd6776ccfc3dab6cbcd616fa99094503d8846815d34ef} 
+GRAYA&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RGB@{RGB}!Image.h@{Image.h}}\index{Image.h@{Image.h}!RGB@{RGB}}}\Hypertarget{_image_8h_a6140c45a6cc8b72c3676cd6776ccfc3da889574aebacda6bfd3e534e2b49b8028}\label{_image_8h_a6140c45a6cc8b72c3676cd6776ccfc3da889574aebacda6bfd3e534e2b49b8028} 
+RGB&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RGBA@{RGBA}!Image.h@{Image.h}}\index{Image.h@{Image.h}!RGBA@{RGBA}}}\Hypertarget{_image_8h_a6140c45a6cc8b72c3676cd6776ccfc3daea3495a278957dc58165e48a8945469f}\label{_image_8h_a6140c45a6cc8b72c3676cd6776ccfc3daea3495a278957dc58165e48a8945469f} 
+RGBA&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HSV@{HSV}!Image.h@{Image.h}}\index{Image.h@{Image.h}!HSV@{HSV}}}\Hypertarget{_image_8h_a6140c45a6cc8b72c3676cd6776ccfc3da6878315e698a7cbfd0d97d77f6619c5f}\label{_image_8h_a6140c45a6cc8b72c3676cd6776ccfc3da6878315e698a7cbfd0d97d77f6619c5f} 
+HSV&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HSL@{HSL}!Image.h@{Image.h}}\index{Image.h@{Image.h}!HSL@{HSL}}}\Hypertarget{_image_8h_a6140c45a6cc8b72c3676cd6776ccfc3da855c12a901e2564e19adcd8706ab867e}\label{_image_8h_a6140c45a6cc8b72c3676cd6776ccfc3da855c12a901e2564e19adcd8706ab867e} 
+HSL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HSVA@{HSVA}!Image.h@{Image.h}}\index{Image.h@{Image.h}!HSVA@{HSVA}}}\Hypertarget{_image_8h_a6140c45a6cc8b72c3676cd6776ccfc3da488f161e4a2914686506928a568a39b2}\label{_image_8h_a6140c45a6cc8b72c3676cd6776ccfc3da488f161e4a2914686506928a568a39b2} 
+HSVA&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HSLA@{HSLA}!Image.h@{Image.h}}\index{Image.h@{Image.h}!HSLA@{HSLA}}}\Hypertarget{_image_8h_a6140c45a6cc8b72c3676cd6776ccfc3da93f128456c0fa054ab83717ed04c8e62}\label{_image_8h_a6140c45a6cc8b72c3676cd6776ccfc3da93f128456c0fa054ab83717ed04c8e62} 
+HSLA&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UNKNOWN@{UNKNOWN}!Image.h@{Image.h}}\index{Image.h@{Image.h}!UNKNOWN@{UNKNOWN}}}\Hypertarget{_image_8h_a6140c45a6cc8b72c3676cd6776ccfc3da696b031073e74bf2cb98e5ef201d4aa3}\label{_image_8h_a6140c45a6cc8b72c3676cd6776ccfc3da696b031073e74bf2cb98e5ef201d4aa3} 
+UNKNOWN&\\
+\hline
+
+\end{DoxyEnumFields}

@@ -1,0 +1,351 @@
+\doxysection{Image Class Reference}
+\hypertarget{class_image}{}\label{class_image}\index{Image@{Image}}
+
+
+A class for representing and manipulating images.  
+
+
+
+
+{\ttfamily \#include $<$Image.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_image_a58edd1c45b4faeb5f789b0d036d02313}{Image}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_image_a81e88caba6ef6c0ed639bf1f25e9d441}{Image}} (const std\+::string \&filename)
+\begin{DoxyCompactList}\small\item\em Constructs an image from a file. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_image_ac3a6c85e37ae6c9782e93154a301fb0b}{Image}} (int width, int height, int channels)
+\begin{DoxyCompactList}\small\item\em Constructs an empty image with specified dimensions and channels. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_image_a1c9010f2c60abb44cf2aa0b26a041311}{Image}} (unsigned char \texorpdfstring{$\ast$}{*}data, int width, int height, int channels, \mbox{\hyperlink{_image_8h_a6140c45a6cc8b72c3676cd6776ccfc3d}{Image\+State}} state)
+\begin{DoxyCompactList}\small\item\em Constructs an image from raw data. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_image_a5a3bc57bd7ba53f9ae55b1963b9ba0a1}{Image}} (const \mbox{\hyperlink{class_image}{Image}} \&other)
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_image_a0294f63700543e11c0f0da85601c7ae5}{\texorpdfstring{$\sim$}{\string~}\+Image}} ()
+\begin{DoxyCompactList}\small\item\em Destructor to free allocated resources. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_image_8h_a6140c45a6cc8b72c3676cd6776ccfc3d}{Image\+State}} \mbox{\hyperlink{class_image_ad45fab9f6f06acd3d2f6e91082972425}{get\+State}} () const
+\begin{DoxyCompactList}\small\item\em Gets the current state of the image. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_image_a21c3ff93356c4a640de1f75b820b449a}{convert\+To\+HSL}} ()
+\begin{DoxyCompactList}\small\item\em Converts the image to the HSL color space. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_image_adb848077f479c5b7fd90ed9303bd0ab4}{convert\+To\+HSV}} ()
+\begin{DoxyCompactList}\small\item\em Converts the image to the HSV color space. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_image_a6d9205fae414588750e60df5ccaf1882}{convert\+To\+RGB}} ()
+\begin{DoxyCompactList}\small\item\em Converts the image to the RGB color space. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_image_a36bcae4838228d574738249a87dc4464}{get\+Width}} () const
+\begin{DoxyCompactList}\small\item\em Gets the image width. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_image_a1cd7587f88b6932b5269051d1ba08ff9}{get\+Height}} () const
+\begin{DoxyCompactList}\small\item\em Gets the image height. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_image_a821f52f44e80051e48b3f2689ba48611}{get\+Channels}} () const
+\begin{DoxyCompactList}\small\item\em Gets the number of channels in the image. \end{DoxyCompactList}\item 
+const unsigned char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_image_a6a7d293fa8caa8ce4f486319bf996f7f}{get\+Data}} () const
+\begin{DoxyCompactList}\small\item\em Gets the raw image data. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_image_a0aeb25bfe7697458229e8217d1c505f4}{save}} (const std\+::string \&filename, int quality=100) const
+\begin{DoxyCompactList}\small\item\em Saves the image to a file. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_image_a03cf9cb5d1fcb221bb65869811f545b3}{set\+Data}} (unsigned char \texorpdfstring{$\ast$}{*}data, int width, int height, int channels, \mbox{\hyperlink{_image_8h_a6140c45a6cc8b72c3676cd6776ccfc3d}{Image\+State}} state)
+\begin{DoxyCompactList}\small\item\em Sets the image data from raw data. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_image_a5800c078e46718ecef11f3c3362e33cc}{set\+Data}} (const \mbox{\hyperlink{class_image}{Image}} \&other)
+\begin{DoxyCompactList}\small\item\em Copies image data from another image. \end{DoxyCompactList}\item 
+unsigned char \& \mbox{\hyperlink{class_image_ae9e75f89a5b0d2a32286dc836aa61ff7}{operator()}} (int x, int y, int channel=0)
+\begin{DoxyCompactList}\small\item\em Overloaded pixel access operator. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_image}{Image}} \& \mbox{\hyperlink{class_image_a3037a583d17594b1835d9b6b8d09875c}{operator=}} (const \mbox{\hyperlink{class_image}{Image}} \&other)
+\begin{DoxyCompactList}\small\item\em Overloaded assignment operator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A class for representing and manipulating images. 
+
+Supports image loading, saving, format conversion, and basic operations. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_image_a58edd1c45b4faeb5f789b0d036d02313}\index{Image@{Image}!Image@{Image}}
+\index{Image@{Image}!Image@{Image}}
+\doxysubsubsection{\texorpdfstring{Image()}{Image()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
+{\footnotesize\ttfamily \label{class_image_a58edd1c45b4faeb5f789b0d036d02313} 
+Image\+::\+Image (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Default constructor. 
+
+\Hypertarget{class_image_a81e88caba6ef6c0ed639bf1f25e9d441}\index{Image@{Image}!Image@{Image}}
+\index{Image@{Image}!Image@{Image}}
+\doxysubsubsection{\texorpdfstring{Image()}{Image()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
+{\footnotesize\ttfamily \label{class_image_a81e88caba6ef6c0ed639bf1f25e9d441} 
+Image\+::\+Image (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename}{}\end{DoxyParamCaption})}
+
+
+
+Constructs an image from a file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & The file path to load the image from. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_image_ac3a6c85e37ae6c9782e93154a301fb0b}\index{Image@{Image}!Image@{Image}}
+\index{Image@{Image}!Image@{Image}}
+\doxysubsubsection{\texorpdfstring{Image()}{Image()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
+{\footnotesize\ttfamily \label{class_image_ac3a6c85e37ae6c9782e93154a301fb0b} 
+Image\+::\+Image (\begin{DoxyParamCaption}\item[{int}]{width}{, }\item[{int}]{height}{, }\item[{int}]{channels}{}\end{DoxyParamCaption})}
+
+
+
+Constructs an empty image with specified dimensions and channels. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em width} & \doxylink{class_image}{Image} width. \\
+\hline
+{\em height} & \doxylink{class_image}{Image} height. \\
+\hline
+{\em channels} & Number of color channels. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_image_a1c9010f2c60abb44cf2aa0b26a041311}\index{Image@{Image}!Image@{Image}}
+\index{Image@{Image}!Image@{Image}}
+\doxysubsubsection{\texorpdfstring{Image()}{Image()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
+{\footnotesize\ttfamily \label{class_image_a1c9010f2c60abb44cf2aa0b26a041311} 
+Image\+::\+Image (\begin{DoxyParamCaption}\item[{unsigned char \texorpdfstring{$\ast$}{*}}]{data}{, }\item[{int}]{width}{, }\item[{int}]{height}{, }\item[{int}]{channels}{, }\item[{\mbox{\hyperlink{_image_8h_a6140c45a6cc8b72c3676cd6776ccfc3d}{Image\+State}}}]{state}{}\end{DoxyParamCaption})}
+
+
+
+Constructs an image from raw data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & Pointer to image data. \\
+\hline
+{\em width} & \doxylink{class_image}{Image} width. \\
+\hline
+{\em height} & \doxylink{class_image}{Image} height. \\
+\hline
+{\em channels} & Number of color channels. \\
+\hline
+{\em state} & The current state of the image. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_image_a5a3bc57bd7ba53f9ae55b1963b9ba0a1}\index{Image@{Image}!Image@{Image}}
+\index{Image@{Image}!Image@{Image}}
+\doxysubsubsection{\texorpdfstring{Image()}{Image()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
+{\footnotesize\ttfamily \label{class_image_a5a3bc57bd7ba53f9ae55b1963b9ba0a1} 
+Image\+::\+Image (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_image}{Image}} \&}]{other}{}\end{DoxyParamCaption})}
+
+
+
+Copy constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & The image to copy from. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_image_a0294f63700543e11c0f0da85601c7ae5}\index{Image@{Image}!````~Image@{\texorpdfstring{$\sim$}{\string~}Image}}
+\index{````~Image@{\texorpdfstring{$\sim$}{\string~}Image}!Image@{Image}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Image()}{\string~Image()}}
+{\footnotesize\ttfamily \label{class_image_a0294f63700543e11c0f0da85601c7ae5} 
+Image\+::\texorpdfstring{$\sim$}{\string~}\+Image (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Destructor to free allocated resources. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_image_a21c3ff93356c4a640de1f75b820b449a}\index{Image@{Image}!convertToHSL@{convertToHSL}}
+\index{convertToHSL@{convertToHSL}!Image@{Image}}
+\doxysubsubsection{\texorpdfstring{convertToHSL()}{convertToHSL()}}
+{\footnotesize\ttfamily \label{class_image_a21c3ff93356c4a640de1f75b820b449a} 
+void Image\+::convert\+To\+HSL (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Converts the image to the HSL color space. 
+
+\Hypertarget{class_image_adb848077f479c5b7fd90ed9303bd0ab4}\index{Image@{Image}!convertToHSV@{convertToHSV}}
+\index{convertToHSV@{convertToHSV}!Image@{Image}}
+\doxysubsubsection{\texorpdfstring{convertToHSV()}{convertToHSV()}}
+{\footnotesize\ttfamily \label{class_image_adb848077f479c5b7fd90ed9303bd0ab4} 
+void Image\+::convert\+To\+HSV (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Converts the image to the HSV color space. 
+
+\Hypertarget{class_image_a6d9205fae414588750e60df5ccaf1882}\index{Image@{Image}!convertToRGB@{convertToRGB}}
+\index{convertToRGB@{convertToRGB}!Image@{Image}}
+\doxysubsubsection{\texorpdfstring{convertToRGB()}{convertToRGB()}}
+{\footnotesize\ttfamily \label{class_image_a6d9205fae414588750e60df5ccaf1882} 
+void Image\+::convert\+To\+RGB (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Converts the image to the RGB color space. 
+
+\Hypertarget{class_image_a821f52f44e80051e48b3f2689ba48611}\index{Image@{Image}!getChannels@{getChannels}}
+\index{getChannels@{getChannels}!Image@{Image}}
+\doxysubsubsection{\texorpdfstring{getChannels()}{getChannels()}}
+{\footnotesize\ttfamily \label{class_image_a821f52f44e80051e48b3f2689ba48611} 
+int Image\+::get\+Channels (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Gets the number of channels in the image. 
+
+\begin{DoxyReturn}{Returns}
+The number of channels. 
+\end{DoxyReturn}
+\Hypertarget{class_image_a6a7d293fa8caa8ce4f486319bf996f7f}\index{Image@{Image}!getData@{getData}}
+\index{getData@{getData}!Image@{Image}}
+\doxysubsubsection{\texorpdfstring{getData()}{getData()}}
+{\footnotesize\ttfamily \label{class_image_a6a7d293fa8caa8ce4f486319bf996f7f} 
+const unsigned char \texorpdfstring{$\ast$}{*} Image\+::get\+Data (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Gets the raw image data. 
+
+\begin{DoxyReturn}{Returns}
+A pointer to the image data. 
+\end{DoxyReturn}
+\Hypertarget{class_image_a1cd7587f88b6932b5269051d1ba08ff9}\index{Image@{Image}!getHeight@{getHeight}}
+\index{getHeight@{getHeight}!Image@{Image}}
+\doxysubsubsection{\texorpdfstring{getHeight()}{getHeight()}}
+{\footnotesize\ttfamily \label{class_image_a1cd7587f88b6932b5269051d1ba08ff9} 
+int Image\+::get\+Height (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Gets the image height. 
+
+\begin{DoxyReturn}{Returns}
+The height of the image. 
+\end{DoxyReturn}
+\Hypertarget{class_image_ad45fab9f6f06acd3d2f6e91082972425}\index{Image@{Image}!getState@{getState}}
+\index{getState@{getState}!Image@{Image}}
+\doxysubsubsection{\texorpdfstring{getState()}{getState()}}
+{\footnotesize\ttfamily \label{class_image_ad45fab9f6f06acd3d2f6e91082972425} 
+\mbox{\hyperlink{_image_8h_a6140c45a6cc8b72c3676cd6776ccfc3d}{Image\+State}} Image\+::get\+State (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Gets the current state of the image. 
+
+\begin{DoxyReturn}{Returns}
+The image state. 
+\end{DoxyReturn}
+\Hypertarget{class_image_a36bcae4838228d574738249a87dc4464}\index{Image@{Image}!getWidth@{getWidth}}
+\index{getWidth@{getWidth}!Image@{Image}}
+\doxysubsubsection{\texorpdfstring{getWidth()}{getWidth()}}
+{\footnotesize\ttfamily \label{class_image_a36bcae4838228d574738249a87dc4464} 
+int Image\+::get\+Width (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Gets the image width. 
+
+\begin{DoxyReturn}{Returns}
+The width of the image. 
+\end{DoxyReturn}
+\Hypertarget{class_image_ae9e75f89a5b0d2a32286dc836aa61ff7}\index{Image@{Image}!operator()@{operator()}}
+\index{operator()@{operator()}!Image@{Image}}
+\doxysubsubsection{\texorpdfstring{operator()()}{operator()()}}
+{\footnotesize\ttfamily \label{class_image_ae9e75f89a5b0d2a32286dc836aa61ff7} 
+unsigned char \& Image\+::operator() (\begin{DoxyParamCaption}\item[{int}]{x}{, }\item[{int}]{y}{, }\item[{int}]{channel}{ = {\ttfamily 0}}\end{DoxyParamCaption})}
+
+
+
+Overloaded pixel access operator. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & X-\/coordinate. \\
+\hline
+{\em y} & Y-\/coordinate. \\
+\hline
+{\em channel} & Color channel index (default\+: 0). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A reference to the pixel value. 
+\end{DoxyReturn}
+\Hypertarget{class_image_a3037a583d17594b1835d9b6b8d09875c}\index{Image@{Image}!operator=@{operator=}}
+\index{operator=@{operator=}!Image@{Image}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \label{class_image_a3037a583d17594b1835d9b6b8d09875c} 
+\mbox{\hyperlink{class_image}{Image}} \& Image\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_image}{Image}} \&}]{other}{}\end{DoxyParamCaption})}
+
+
+
+Overloaded assignment operator. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & The image to assign from. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A reference to this image. 
+\end{DoxyReturn}
+\Hypertarget{class_image_a0aeb25bfe7697458229e8217d1c505f4}\index{Image@{Image}!save@{save}}
+\index{save@{save}!Image@{Image}}
+\doxysubsubsection{\texorpdfstring{save()}{save()}}
+{\footnotesize\ttfamily \label{class_image_a0aeb25bfe7697458229e8217d1c505f4} 
+void Image\+::save (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename}{, }\item[{int}]{quality}{ = {\ttfamily 100}}\end{DoxyParamCaption}) const}
+
+
+
+Saves the image to a file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & The file path to save the image. \\
+\hline
+{\em quality} & The quality level for image compression (default\+: 100). \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_image_a5800c078e46718ecef11f3c3362e33cc}\index{Image@{Image}!setData@{setData}}
+\index{setData@{setData}!Image@{Image}}
+\doxysubsubsection{\texorpdfstring{setData()}{setData()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_image_a5800c078e46718ecef11f3c3362e33cc} 
+void Image\+::set\+Data (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_image}{Image}} \&}]{other}{}\end{DoxyParamCaption})}
+
+
+
+Copies image data from another image. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & The image to copy from. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_image_a03cf9cb5d1fcb221bb65869811f545b3}\index{Image@{Image}!setData@{setData}}
+\index{setData@{setData}!Image@{Image}}
+\doxysubsubsection{\texorpdfstring{setData()}{setData()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_image_a03cf9cb5d1fcb221bb65869811f545b3} 
+void Image\+::set\+Data (\begin{DoxyParamCaption}\item[{unsigned char \texorpdfstring{$\ast$}{*}}]{data}{, }\item[{int}]{width}{, }\item[{int}]{height}{, }\item[{int}]{channels}{, }\item[{\mbox{\hyperlink{_image_8h_a6140c45a6cc8b72c3676cd6776ccfc3d}{Image\+State}}}]{state}{}\end{DoxyParamCaption})}
+
+
+
+Sets the image data from raw data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & Pointer to new image data. \\
+\hline
+{\em width} & \doxylink{class_image}{Image} width. \\
+\hline
+{\em height} & \doxylink{class_image}{Image} height. \\
+\hline
+{\em channels} & Number of color channels. \\
+\hline
+{\em state} & The new state of the image. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\mbox{\hyperlink{_image_8h}{Image.\+h}}\item 
+src/\mbox{\hyperlink{_image_8cpp}{Image.\+cpp}}\end{DoxyCompactItemize}

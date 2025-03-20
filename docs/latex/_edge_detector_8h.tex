@@ -1,0 +1,50 @@
+\doxysection{src/2\+D/\+Edge\+Detector.h File Reference}
+\hypertarget{_edge_detector_8h}{}\label{_edge_detector_8h}\index{src/2D/EdgeDetector.h@{src/2D/EdgeDetector.h}}
+{\ttfamily \#include "{}../\+Filter.\+h"{}}\newline
+{\ttfamily \#include "{}../\+Image.\+h"{}}\newline
+{\ttfamily \#include $<$cmath$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include $<$limits$>$}\newline
+{\ttfamily \#include $<$stdexcept$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_edge_detector}{Edge\+Detector}}
+\begin{DoxyCompactList}\small\item\em A filter class for applying various edge detection techniques on images. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{_edge_detector_8h_aab61f22815e3a7f08a93c6ccafb9bef8}{Edge\+Detection\+Type}} \{ \mbox{\hyperlink{_edge_detector_8h_aab61f22815e3a7f08a93c6ccafb9bef8a72e4f1a61efb42bee3f652fcf5db32b8}{Sobel}}
+, \mbox{\hyperlink{_edge_detector_8h_aab61f22815e3a7f08a93c6ccafb9bef8ab0668738b1f82bdb33252275c3ce2d2d}{Prewitt}}
+, \mbox{\hyperlink{_edge_detector_8h_aab61f22815e3a7f08a93c6ccafb9bef8a282e20fff4400a817ff7fd1661dbf16c}{Scharr}}
+, \mbox{\hyperlink{_edge_detector_8h_aab61f22815e3a7f08a93c6ccafb9bef8a1310b75d87db634a5e7c281a35af8004}{Roberts\+Cross}}
+ \}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{_edge_detector_8h_aab61f22815e3a7f08a93c6ccafb9bef8}\index{EdgeDetector.h@{EdgeDetector.h}!EdgeDetectionType@{EdgeDetectionType}}
+\index{EdgeDetectionType@{EdgeDetectionType}!EdgeDetector.h@{EdgeDetector.h}}
+\doxysubsubsection{\texorpdfstring{EdgeDetectionType}{EdgeDetectionType}}
+{\footnotesize\ttfamily \label{_edge_detector_8h_aab61f22815e3a7f08a93c6ccafb9bef8} 
+enum class \mbox{\hyperlink{_edge_detector_8h_aab61f22815e3a7f08a93c6ccafb9bef8}{Edge\+Detection\+Type}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Sobel@{Sobel}!EdgeDetector.h@{EdgeDetector.h}}\index{EdgeDetector.h@{EdgeDetector.h}!Sobel@{Sobel}}}\Hypertarget{_edge_detector_8h_aab61f22815e3a7f08a93c6ccafb9bef8a72e4f1a61efb42bee3f652fcf5db32b8}\label{_edge_detector_8h_aab61f22815e3a7f08a93c6ccafb9bef8a72e4f1a61efb42bee3f652fcf5db32b8} 
+Sobel&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Prewitt@{Prewitt}!EdgeDetector.h@{EdgeDetector.h}}\index{EdgeDetector.h@{EdgeDetector.h}!Prewitt@{Prewitt}}}\Hypertarget{_edge_detector_8h_aab61f22815e3a7f08a93c6ccafb9bef8ab0668738b1f82bdb33252275c3ce2d2d}\label{_edge_detector_8h_aab61f22815e3a7f08a93c6ccafb9bef8ab0668738b1f82bdb33252275c3ce2d2d} 
+Prewitt&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Scharr@{Scharr}!EdgeDetector.h@{EdgeDetector.h}}\index{EdgeDetector.h@{EdgeDetector.h}!Scharr@{Scharr}}}\Hypertarget{_edge_detector_8h_aab61f22815e3a7f08a93c6ccafb9bef8a282e20fff4400a817ff7fd1661dbf16c}\label{_edge_detector_8h_aab61f22815e3a7f08a93c6ccafb9bef8a282e20fff4400a817ff7fd1661dbf16c} 
+Scharr&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RobertsCross@{RobertsCross}!EdgeDetector.h@{EdgeDetector.h}}\index{EdgeDetector.h@{EdgeDetector.h}!RobertsCross@{RobertsCross}}}\Hypertarget{_edge_detector_8h_aab61f22815e3a7f08a93c6ccafb9bef8a1310b75d87db634a5e7c281a35af8004}\label{_edge_detector_8h_aab61f22815e3a7f08a93c6ccafb9bef8a1310b75d87db634a5e7c281a35af8004} 
+Roberts\+Cross&\\
+\hline
+
+\end{DoxyEnumFields}

@@ -1,0 +1,81 @@
+\doxysection{Sharpener Class Reference}
+\hypertarget{class_sharpener}{}\label{class_sharpener}\index{Sharpener@{Sharpener}}
+
+
+A filter class for applying sharpening effects to images.  
+
+
+
+
+{\ttfamily \#include $<$Sharpener.\+h$>$}
+
+Inheritance diagram for Sharpener\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_sharpener}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_sharpener_aa1207a82fc97e6d7cf3ed2b6b302e0ea}{apply}} (\mbox{\hyperlink{class_image}{Image}} \&img) override
+\begin{DoxyCompactList}\small\item\em Applies the sharpening filter to an image. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_sharpener_a92876c18f2ee42d1afdd9ddcb45657b6}{apply}} (\mbox{\hyperlink{class_volume}{Volume}} \&vol) override
+\begin{DoxyCompactList}\small\item\em Throws an exception, as 3D volume sharpening is not supported. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A filter class for applying sharpening effects to images. 
+
+Uses a Laplacian kernel to enhance the edges in an image. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_sharpener_aa1207a82fc97e6d7cf3ed2b6b302e0ea}\index{Sharpener@{Sharpener}!apply@{apply}}
+\index{apply@{apply}!Sharpener@{Sharpener}}
+\doxysubsubsection{\texorpdfstring{apply()}{apply()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_sharpener_aa1207a82fc97e6d7cf3ed2b6b302e0ea} 
+void Sharpener\+::apply (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_image}{Image}} \&}]{img}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Applies the sharpening filter to an image. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em img} & The image to process. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_filter_a9d4dd1ead47bb006091b941063e5898f}{Filter}}.
+
+\Hypertarget{class_sharpener_a92876c18f2ee42d1afdd9ddcb45657b6}\index{Sharpener@{Sharpener}!apply@{apply}}
+\index{apply@{apply}!Sharpener@{Sharpener}}
+\doxysubsubsection{\texorpdfstring{apply()}{apply()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_sharpener_a92876c18f2ee42d1afdd9ddcb45657b6} 
+void Sharpener\+::apply (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_volume}{Volume}} \&}]{vol}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Throws an exception, as 3D volume sharpening is not supported. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vol} & The volume to which the sharpening filter cannot be applied. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error} & Always throws since 3D sharpening is not supported. \\
+\hline
+\end{DoxyExceptions}
+
+
+Implements \mbox{\hyperlink{class_filter_a4fb0a1b8a0d4e16b166a2c83b19315dd}{Filter}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/2\+D/\mbox{\hyperlink{_sharpener_8h}{Sharpener.\+h}}\item 
+src/2\+D/\mbox{\hyperlink{_sharpener_8cpp}{Sharpener.\+cpp}}\end{DoxyCompactItemize}

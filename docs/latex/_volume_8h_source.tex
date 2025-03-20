@@ -1,0 +1,72 @@
+\doxysection{Volume.\+h}
+\hypertarget{_volume_8h_source}{}\label{_volume_8h_source}\index{src/Volume.h@{src/Volume.h}}
+\mbox{\hyperlink{_volume_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ @file\ Volume.h}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ @brief\ Header\ file\ for\ the\ Volume\ class,\ which\ handles\ 3D\ volume\ data.}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ Group\ name:\ Bisection}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ }}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *\ @authors}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *\ -\/\ Vera\ Fan\ (esemsc-\/3f9bc883)}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *\ -\/\ Jiawei\ Zhan\ (esemsc-\/jz1224)}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *\ -\/\ Simranjeet\ Singh\ (esemsc-\/ss2524)}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ -\/\ George\ Sokolik\ (esemsc-\/gts124)}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ -\/\ Qihan\ Zhang\ (esemsc-\/qz624)}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *\ -\/\ Yixiao\ Zheng\ (esemsc-\/yz1824)}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ -\/\ Miles\ Weberman\ (esemsc-\/mw2124)}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ ******************************************************************************/}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#ifndef\ VOLUME\_H}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#define\ VOLUME\_H}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{comment}{//\ Enum\ for\ tracking\ volume\ processing\ state}}
+\DoxyCodeLine{00025\ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{_volume_8h_afe6214172a8f4085f7b16ce6523dcf7f}{VolumeState}}\ \{}
+\DoxyCodeLine{00026\ \ \ \ \ \mbox{\hyperlink{_volume_8h_afe6214172a8f4085f7b16ce6523dcf7fa633d6abff0a3fc22404347728d195059}{RAW}},\ \textcolor{comment}{//\ Unprocessed\ volume}}
+\DoxyCodeLine{00027\ \ \ \ \ \mbox{\hyperlink{_volume_8h_afe6214172a8f4085f7b16ce6523dcf7faee1eea8e5a469fc7a3fb99cc78182982}{PROCESSED}},\ \textcolor{comment}{//\ Processed\ volume}}
+\DoxyCodeLine{00028\ \ \ \ \ \mbox{\hyperlink{_image_8h_a6140c45a6cc8b72c3676cd6776ccfc3da696b031073e74bf2cb98e5ef201d4aa3}{UNKNOWN}}\ \textcolor{comment}{//\ Uninitialized\ state}}
+\DoxyCodeLine{00029\ \};}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00038\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_volume_a7d3bb81da95df85009b9f3ddd985cd9f}{Volume}}\ \{}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_volume_a7d3bb81da95df85009b9f3ddd985cd9f}{Volume}}();}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_volume_a7d3bb81da95df85009b9f3ddd985cd9f}{Volume}}(\textcolor{keyword}{const}\ std::string\&\ folderPath,\ \textcolor{keyword}{const}\ std::string\&\ filePrefix,\ \textcolor{keywordtype}{int}\ startIdx,\ \textcolor{keywordtype}{int}\ endIdx,\ \textcolor{keyword}{const}\ std::string\&\ fileExtension);}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_volume_ad5d2015f5c0fea005f02be8f6d60b212}{\string~Volume}}();}
+\DoxyCodeLine{00059\ \ \ \ \ }
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_volume_8h_afe6214172a8f4085f7b16ce6523dcf7f}{VolumeState}}\ \mbox{\hyperlink{class_volume_a5885b62889fb853b680c93088ada04b9}{getState}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_volume_a6421ea4fb9b499e51499531dbc6999d5}{getWidth}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_volume_a33c75b641d988efed2ce4d2568e7269e}{getHeight}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_volume_ab082670ea100c39d94fefc77ac83c4d8}{getDepth}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_volume_a300a981d248f8d6a613d6344bceb82e9}{getChannels}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{class_volume_a64b871950ed2af2e5107b94154df5927}{getData}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_volume_a821c5e654180a21a6e165cd5fedbc218}{saveSlices}}(\textcolor{keyword}{const}\ std::string\&\ outputFolder,\ \textcolor{keywordtype}{int}\ quality,\ \textcolor{keyword}{const}\ std::string\&\ fileExtension)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00103\ \ \ \ \ }
+\DoxyCodeLine{00104\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}*\ data;\ }
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ width;\ }
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ height;\ }
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ depth;\ }
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ channels;\ }
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_volume_8h_afe6214172a8f4085f7b16ce6523dcf7f}{VolumeState}}\ state;\ }
+\DoxyCodeLine{00111\ \ \ \ \ }
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ loadVolume(\textcolor{keyword}{const}\ std::string\&\ folderPath,\ \textcolor{keyword}{const}\ std::string\&\ filePrefix,\ \textcolor{keywordtype}{int}\ startIdx,\ \textcolor{keywordtype}{int}\ endIdx,\ \textcolor{keyword}{const}\ std::string\&\ fileExtension);}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ compareFileNames(\textcolor{keyword}{const}\ std::string\&\ a,\ \textcolor{keyword}{const}\ std::string\&\ b);}
+\DoxyCodeLine{00129\ \ \ \ \ \};}
+\DoxyCodeLine{00130\ \ \ \ \ }
+\DoxyCodeLine{00131\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ VOLUME\_H}}
+
+\end{DoxyCode}

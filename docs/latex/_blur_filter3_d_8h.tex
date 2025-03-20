@@ -1,0 +1,40 @@
+\doxysection{src/3\+D/\+Blur\+Filter3D.h File Reference}
+\hypertarget{_blur_filter3_d_8h}{}\label{_blur_filter3_d_8h}\index{src/3D/BlurFilter3D.h@{src/3D/BlurFilter3D.h}}
+{\ttfamily \#include "{}Filter.\+h"{}}\newline
+{\ttfamily \#include "{}../\+Volume.\+h"{}}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$stdexcept$>$}\newline
+{\ttfamily \#include $<$cmath$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_filter3_d_parameters}{Filter3\+DParameters}}
+\item 
+class \mbox{\hyperlink{class_blur_filter3_d}{Blur\+Filter3D}}
+\begin{DoxyCompactList}\small\item\em A filter class for applying 3D blurring techniques to volumetric data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{_blur_filter3_d_8h_a612be3f267546e67cc8c30426b905e50}{Filter3\+DType}} \{ \mbox{\hyperlink{_blur_filter3_d_8h_a612be3f267546e67cc8c30426b905e50a4471a723be46b14fd252403c8db161ff}{Gaussian\+Blur}}
+, \mbox{\hyperlink{_blur_filter3_d_8h_a612be3f267546e67cc8c30426b905e50a710c94640ff8eb62bf69a881a22f9967}{Median\+Blur}}
+ \}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{_blur_filter3_d_8h_a612be3f267546e67cc8c30426b905e50}\index{BlurFilter3D.h@{BlurFilter3D.h}!Filter3DType@{Filter3DType}}
+\index{Filter3DType@{Filter3DType}!BlurFilter3D.h@{BlurFilter3D.h}}
+\doxysubsubsection{\texorpdfstring{Filter3DType}{Filter3DType}}
+{\footnotesize\ttfamily \label{_blur_filter3_d_8h_a612be3f267546e67cc8c30426b905e50} 
+enum class \mbox{\hyperlink{_blur_filter3_d_8h_a612be3f267546e67cc8c30426b905e50}{Filter3\+DType}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GaussianBlur@{GaussianBlur}!BlurFilter3D.h@{BlurFilter3D.h}}\index{BlurFilter3D.h@{BlurFilter3D.h}!GaussianBlur@{GaussianBlur}}}\Hypertarget{_blur_filter3_d_8h_a612be3f267546e67cc8c30426b905e50a4471a723be46b14fd252403c8db161ff}\label{_blur_filter3_d_8h_a612be3f267546e67cc8c30426b905e50a4471a723be46b14fd252403c8db161ff} 
+Gaussian\+Blur&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MedianBlur@{MedianBlur}!BlurFilter3D.h@{BlurFilter3D.h}}\index{BlurFilter3D.h@{BlurFilter3D.h}!MedianBlur@{MedianBlur}}}\Hypertarget{_blur_filter3_d_8h_a612be3f267546e67cc8c30426b905e50a710c94640ff8eb62bf69a881a22f9967}\label{_blur_filter3_d_8h_a612be3f267546e67cc8c30426b905e50a710c94640ff8eb62bf69a881a22f9967} 
+Median\+Blur&\\
+\hline
+
+\end{DoxyEnumFields}

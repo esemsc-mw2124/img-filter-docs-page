@@ -1,0 +1,55 @@
+\doxysection{src/2\+D/\+Simple\+Filter.h File Reference}
+\hypertarget{_simple_filter_8h}{}\label{_simple_filter_8h}\index{src/2D/SimpleFilter.h@{src/2D/SimpleFilter.h}}
+{\ttfamily \#include "{}../\+Image.\+h"{}}\newline
+{\ttfamily \#include "{}../\+Filter.\+h"{}}\newline
+{\ttfamily \#include $<$stdexcept$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_simple_filter_parameters}{Simple\+Filter\+Parameters}}
+\item 
+class \mbox{\hyperlink{class_simple_filter}{Simple\+Filter}}
+\begin{DoxyCompactList}\small\item\em A filter class for applying various simple image processing operations. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{_simple_filter_8h_ac9407f0c2ed7a5fc7eddb839a8680680}{Simple\+Filter\+Type}} \{ \newline
+\mbox{\hyperlink{_simple_filter_8h_ac9407f0c2ed7a5fc7eddb839a8680680a4f90b9cafa6fec5c0bd8cb1df7281693}{Gray\+Scale}}
+, \mbox{\hyperlink{_simple_filter_8h_ac9407f0c2ed7a5fc7eddb839a8680680a38aeaf62bcf961434d237b6a5bb68a93}{Brightness\+Dullness}}
+, \mbox{\hyperlink{_simple_filter_8h_ac9407f0c2ed7a5fc7eddb839a8680680a0361daa6e6a0d66796e3af8c0f25b23f}{Histogram\+Equalization}}
+, \mbox{\hyperlink{_simple_filter_8h_ac9407f0c2ed7a5fc7eddb839a8680680a2a63f555989152ba866b43a1faacd680}{Threshold}}
+, \newline
+\mbox{\hyperlink{_simple_filter_8h_ac9407f0c2ed7a5fc7eddb839a8680680abf60f93e6be31f769be21087310555ab}{Salt\+Pepper\+Noise}}
+ \}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{_simple_filter_8h_ac9407f0c2ed7a5fc7eddb839a8680680}\index{SimpleFilter.h@{SimpleFilter.h}!SimpleFilterType@{SimpleFilterType}}
+\index{SimpleFilterType@{SimpleFilterType}!SimpleFilter.h@{SimpleFilter.h}}
+\doxysubsubsection{\texorpdfstring{SimpleFilterType}{SimpleFilterType}}
+{\footnotesize\ttfamily \label{_simple_filter_8h_ac9407f0c2ed7a5fc7eddb839a8680680} 
+enum class \mbox{\hyperlink{_simple_filter_8h_ac9407f0c2ed7a5fc7eddb839a8680680}{Simple\+Filter\+Type}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GrayScale@{GrayScale}!SimpleFilter.h@{SimpleFilter.h}}\index{SimpleFilter.h@{SimpleFilter.h}!GrayScale@{GrayScale}}}\Hypertarget{_simple_filter_8h_ac9407f0c2ed7a5fc7eddb839a8680680a4f90b9cafa6fec5c0bd8cb1df7281693}\label{_simple_filter_8h_ac9407f0c2ed7a5fc7eddb839a8680680a4f90b9cafa6fec5c0bd8cb1df7281693} 
+Gray\+Scale&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BrightnessDullness@{BrightnessDullness}!SimpleFilter.h@{SimpleFilter.h}}\index{SimpleFilter.h@{SimpleFilter.h}!BrightnessDullness@{BrightnessDullness}}}\Hypertarget{_simple_filter_8h_ac9407f0c2ed7a5fc7eddb839a8680680a38aeaf62bcf961434d237b6a5bb68a93}\label{_simple_filter_8h_ac9407f0c2ed7a5fc7eddb839a8680680a38aeaf62bcf961434d237b6a5bb68a93} 
+Brightness\+Dullness&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HistogramEqualization@{HistogramEqualization}!SimpleFilter.h@{SimpleFilter.h}}\index{SimpleFilter.h@{SimpleFilter.h}!HistogramEqualization@{HistogramEqualization}}}\Hypertarget{_simple_filter_8h_ac9407f0c2ed7a5fc7eddb839a8680680a0361daa6e6a0d66796e3af8c0f25b23f}\label{_simple_filter_8h_ac9407f0c2ed7a5fc7eddb839a8680680a0361daa6e6a0d66796e3af8c0f25b23f} 
+Histogram\+Equalization&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Threshold@{Threshold}!SimpleFilter.h@{SimpleFilter.h}}\index{SimpleFilter.h@{SimpleFilter.h}!Threshold@{Threshold}}}\Hypertarget{_simple_filter_8h_ac9407f0c2ed7a5fc7eddb839a8680680a2a63f555989152ba866b43a1faacd680}\label{_simple_filter_8h_ac9407f0c2ed7a5fc7eddb839a8680680a2a63f555989152ba866b43a1faacd680} 
+Threshold&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SaltPepperNoise@{SaltPepperNoise}!SimpleFilter.h@{SimpleFilter.h}}\index{SimpleFilter.h@{SimpleFilter.h}!SaltPepperNoise@{SaltPepperNoise}}}\Hypertarget{_simple_filter_8h_ac9407f0c2ed7a5fc7eddb839a8680680abf60f93e6be31f769be21087310555ab}\label{_simple_filter_8h_ac9407f0c2ed7a5fc7eddb839a8680680abf60f93e6be31f769be21087310555ab} 
+Salt\+Pepper\+Noise&\\
+\hline
+
+\end{DoxyEnumFields}

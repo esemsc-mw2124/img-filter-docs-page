@@ -1,0 +1,76 @@
+\doxysection{Slice Class Reference}
+\hypertarget{class_slice}{}\label{class_slice}\index{Slice@{Slice}}
+
+
+A utility class for extracting 2D slices from a 3D volume.  
+
+
+
+
+{\ttfamily \#include $<$Slice.\+h$>$}
+
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \mbox{\hyperlink{class_slice_a2bf76a8c5a22db1d4b9f89290893f8ef}{extract\+XZSlice}} (const \mbox{\hyperlink{class_volume}{Volume}} \&volume, int y\+Index, \mbox{\hyperlink{class_image}{Image}} \&output\+Image)
+\begin{DoxyCompactList}\small\item\em Extracts an XZ slice from a 3D volume at a given Y-\/index. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{class_slice_a31fe17c7534f57643c45a8941c11a564}{extract\+YZSlice}} (const \mbox{\hyperlink{class_volume}{Volume}} \&volume, int x\+Index, \mbox{\hyperlink{class_image}{Image}} \&output\+Image)
+\begin{DoxyCompactList}\small\item\em Extracts a YZ slice from a 3D volume at a given X-\/index. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A utility class for extracting 2D slices from a 3D volume. 
+
+Supports extracting XZ and YZ slices from volumetric data. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_slice_a2bf76a8c5a22db1d4b9f89290893f8ef}\index{Slice@{Slice}!extractXZSlice@{extractXZSlice}}
+\index{extractXZSlice@{extractXZSlice}!Slice@{Slice}}
+\doxysubsubsection{\texorpdfstring{extractXZSlice()}{extractXZSlice()}}
+{\footnotesize\ttfamily \label{class_slice_a2bf76a8c5a22db1d4b9f89290893f8ef} 
+bool Slice\+::extract\+XZSlice (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_volume}{Volume}} \&}]{volume}{, }\item[{int}]{y\+Index}{, }\item[{\mbox{\hyperlink{class_image}{Image}} \&}]{output\+Image}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Extracts an XZ slice from a 3D volume at a given Y-\/index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em volume} & The input 3D volume. \\
+\hline
+{\em y\+Index} & The Y-\/index at which the slice is extracted. \\
+\hline
+{\em output\+Image} & The output 2D image representing the extracted slice. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if extraction is successful, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{class_slice_a31fe17c7534f57643c45a8941c11a564}\index{Slice@{Slice}!extractYZSlice@{extractYZSlice}}
+\index{extractYZSlice@{extractYZSlice}!Slice@{Slice}}
+\doxysubsubsection{\texorpdfstring{extractYZSlice()}{extractYZSlice()}}
+{\footnotesize\ttfamily \label{class_slice_a31fe17c7534f57643c45a8941c11a564} 
+bool Slice\+::extract\+YZSlice (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_volume}{Volume}} \&}]{volume}{, }\item[{int}]{x\+Index}{, }\item[{\mbox{\hyperlink{class_image}{Image}} \&}]{output\+Image}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Extracts a YZ slice from a 3D volume at a given X-\/index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em volume} & The input 3D volume. \\
+\hline
+{\em x\+Index} & The X-\/index at which the slice is extracted. \\
+\hline
+{\em output\+Image} & The output 2D image representing the extracted slice. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if extraction is successful, false otherwise. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\mbox{\hyperlink{_slice_8h}{Slice.\+h}}\item 
+src/\mbox{\hyperlink{_slice_8cpp}{Slice.\+cpp}}\end{DoxyCompactItemize}

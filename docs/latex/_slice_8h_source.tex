@@ -1,0 +1,36 @@
+\doxysection{Slice.\+h}
+\hypertarget{_slice_8h_source}{}\label{_slice_8h_source}\index{src/Slice.h@{src/Slice.h}}
+\mbox{\hyperlink{_slice_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ @file\ Slice.h}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ @brief\ Header\ file\ for\ slice\ extraction\ from\ volume\ data.}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ Group\ name:\ Bisection}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ }}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *\ @authors}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *\ -\/\ Vera\ Fan\ (esemsc-\/3f9bc883)}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *\ -\/\ Jiawei\ Zhan\ (esemsc-\/jz1224)}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *\ -\/\ Simranjeet\ Singh\ (esemsc-\/ss2524)}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ -\/\ George\ Sokolik\ (esemsc-\/gts124)}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ -\/\ Qihan\ Zhang\ (esemsc-\/qz624)}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *\ -\/\ Yixiao\ Zheng\ (esemsc-\/yz1824)}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ -\/\ Miles\ Weberman\ (esemsc-\/mw2124)}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ ******************************************************************************/}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#ifndef\ SLICE\_H}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#define\ SLICE\_H}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_volume_8h}{Volume.h}}"{}}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_image_8h}{Image.h}}"{}}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00030\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_slice}{Slice}}\ \{}
+\DoxyCodeLine{00031\ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_slice_a2bf76a8c5a22db1d4b9f89290893f8ef}{extractXZSlice}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_volume}{Volume}}\&\ volume,\ \textcolor{keywordtype}{int}\ yIndex,\ \mbox{\hyperlink{class_image}{Image}}\&\ outputImage);}
+\DoxyCodeLine{00040\ \ \ }
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_slice_a31fe17c7534f57643c45a8941c11a564}{extractYZSlice}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_volume}{Volume}}\&\ volume,\ \textcolor{keywordtype}{int}\ xIndex,\ \mbox{\hyperlink{class_image}{Image}}\&\ outputImage);}
+\DoxyCodeLine{00049\ \ \ \};}
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ SLICE\_H}}
+
+\end{DoxyCode}

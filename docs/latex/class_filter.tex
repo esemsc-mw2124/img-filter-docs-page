@@ -1,0 +1,75 @@
+\doxysection{Filter Class Reference}
+\hypertarget{class_filter}{}\label{class_filter}\index{Filter@{Filter}}
+
+
+An abstract base class for image and volume processing filters.  
+
+
+
+
+{\ttfamily \#include $<$Filter.\+h$>$}
+
+Inheritance diagram for Filter\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_filter}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_filter_a9d4dd1ead47bb006091b941063e5898f}{apply}} (\mbox{\hyperlink{class_image}{Image}} \&img)=0
+\begin{DoxyCompactList}\small\item\em Applies the filter to a 2D image. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_filter_a4fb0a1b8a0d4e16b166a2c83b19315dd}{apply}} (\mbox{\hyperlink{class_volume}{Volume}} \&vol)=0
+\begin{DoxyCompactList}\small\item\em Applies the filter to a 3D volume. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+An abstract base class for image and volume processing filters. 
+
+Defines a common interface for applying filters to both 2D images and 3D volumes. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_filter_a9d4dd1ead47bb006091b941063e5898f}\index{Filter@{Filter}!apply@{apply}}
+\index{apply@{apply}!Filter@{Filter}}
+\doxysubsubsection{\texorpdfstring{apply()}{apply()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_filter_a9d4dd1ead47bb006091b941063e5898f} 
+virtual void Filter\+::apply (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_image}{Image}} \&}]{img}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Applies the filter to a 2D image. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em img} & The image to process. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_blur_aab598137d44d9d1c478f4b1e52aaec87}{Blur}}, \mbox{\hyperlink{class_blur_filter3_d_af835ee8f595a217c37c7771c956a42a6}{Blur\+Filter3D}}, \mbox{\hyperlink{class_edge_detector_a9d6647da2985d2f0c1ead0810e26f85e}{Edge\+Detector}}, \mbox{\hyperlink{class_sharpener_aa1207a82fc97e6d7cf3ed2b6b302e0ea}{Sharpener}}, and \mbox{\hyperlink{class_simple_filter_ae3816d4b633905b052a4185d3700633b}{Simple\+Filter}}.
+
+\Hypertarget{class_filter_a4fb0a1b8a0d4e16b166a2c83b19315dd}\index{Filter@{Filter}!apply@{apply}}
+\index{apply@{apply}!Filter@{Filter}}
+\doxysubsubsection{\texorpdfstring{apply()}{apply()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_filter_a4fb0a1b8a0d4e16b166a2c83b19315dd} 
+virtual void Filter\+::apply (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_volume}{Volume}} \&}]{vol}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Applies the filter to a 3D volume. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vol} & The volume to process. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_blur_aeac980382ce1492c53ef052a26d25363}{Blur}}, \mbox{\hyperlink{class_blur_filter3_d_af8befe1004ad53731e608263464068b6}{Blur\+Filter3D}}, \mbox{\hyperlink{class_edge_detector_a9506f2b62839043ea84f1230f36ed407}{Edge\+Detector}}, \mbox{\hyperlink{class_sharpener_a92876c18f2ee42d1afdd9ddcb45657b6}{Sharpener}}, and \mbox{\hyperlink{class_simple_filter_a1bff7d27c852e3713f418c4213926c62}{Simple\+Filter}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\mbox{\hyperlink{_filter_8h}{Filter.\+h}}\end{DoxyCompactItemize}

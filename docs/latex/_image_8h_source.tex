@@ -1,0 +1,104 @@
+\doxysection{Image.\+h}
+\hypertarget{_image_8h_source}{}\label{_image_8h_source}\index{src/Image.h@{src/Image.h}}
+\mbox{\hyperlink{_image_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ @file\ Image.h}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ @brief\ Header\ file\ for\ the\ Image\ class\ and\ related\ image\ processing\ utilities.}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ Group\ name:\ Bisection}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ }}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *\ @authors}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *\ -\/\ Vera\ Fan\ (esemsc-\/3f9bc883)}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *\ -\/\ Jiawei\ Zhan\ (esemsc-\/jz1224)}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *\ -\/\ Simranjeet\ Singh\ (esemsc-\/ss2524)}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ -\/\ George\ Sokolik\ (esemsc-\/gts124)}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ -\/\ Qihan\ Zhang\ (esemsc-\/qz624)}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *\ -\/\ Yixiao\ Zheng\ (esemsc-\/yz1824)}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ -\/\ Miles\ Weberman\ (esemsc-\/mw2124)}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ ******************************************************************************/}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#ifndef\ IMAGE\_H}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#define\ IMAGE\_H}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ <algorithm>}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ <stdexcept>}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ <cstring>}\ \ \textcolor{comment}{//\ For\ std::memcpy}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{_image_8h_a6140c45a6cc8b72c3676cd6776ccfc3d}{ImageState}}\ \{}
+\DoxyCodeLine{00026\ \ \ \ \ \mbox{\hyperlink{_image_8h_a6140c45a6cc8b72c3676cd6776ccfc3da48bf014c704c9eaae100a98006a37bf7}{GRAY}},}
+\DoxyCodeLine{00027\ \ \ \ \ \mbox{\hyperlink{_image_8h_a6140c45a6cc8b72c3676cd6776ccfc3dab6cbcd616fa99094503d8846815d34ef}{GRAYA}},}
+\DoxyCodeLine{00028\ \ \ \ \ \mbox{\hyperlink{_image_8h_a6140c45a6cc8b72c3676cd6776ccfc3da889574aebacda6bfd3e534e2b49b8028}{RGB}},}
+\DoxyCodeLine{00029\ \ \ \ \ \mbox{\hyperlink{_image_8h_a6140c45a6cc8b72c3676cd6776ccfc3daea3495a278957dc58165e48a8945469f}{RGBA}},}
+\DoxyCodeLine{00030\ \ \ \ \ \mbox{\hyperlink{_image_8h_a6140c45a6cc8b72c3676cd6776ccfc3da6878315e698a7cbfd0d97d77f6619c5f}{HSV}},}
+\DoxyCodeLine{00031\ \ \ \ \ \mbox{\hyperlink{_image_8h_a6140c45a6cc8b72c3676cd6776ccfc3da855c12a901e2564e19adcd8706ab867e}{HSL}},}
+\DoxyCodeLine{00032\ \ \ \ \ \mbox{\hyperlink{_image_8h_a6140c45a6cc8b72c3676cd6776ccfc3da488f161e4a2914686506928a568a39b2}{HSVA}},}
+\DoxyCodeLine{00033\ \ \ \ \ \mbox{\hyperlink{_image_8h_a6140c45a6cc8b72c3676cd6776ccfc3da93f128456c0fa054ab83717ed04c8e62}{HSLA}},}
+\DoxyCodeLine{00034\ \ \ \ \ \mbox{\hyperlink{_image_8h_a6140c45a6cc8b72c3676cd6776ccfc3da696b031073e74bf2cb98e5ef201d4aa3}{UNKNOWN}}}
+\DoxyCodeLine{00035\ \};}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00043\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_image_a58edd1c45b4faeb5f789b0d036d02313}{Image}}\ \{}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_image_a58edd1c45b4faeb5f789b0d036d02313}{Image}}();}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_image_a58edd1c45b4faeb5f789b0d036d02313}{Image}}(\textcolor{keyword}{const}\ std::string\ \&filename);}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_image_a58edd1c45b4faeb5f789b0d036d02313}{Image}}(\textcolor{keywordtype}{int}\ width,\ \textcolor{keywordtype}{int}\ height,\ \textcolor{keywordtype}{int}\ channels);}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_image_a58edd1c45b4faeb5f789b0d036d02313}{Image}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}*\ data,\ \textcolor{keywordtype}{int}\ width,\ \textcolor{keywordtype}{int}\ height,\ \textcolor{keywordtype}{int}\ channels,\ \mbox{\hyperlink{_image_8h_a6140c45a6cc8b72c3676cd6776ccfc3d}{ImageState}}\ state);}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_image_a58edd1c45b4faeb5f789b0d036d02313}{Image}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_image_a58edd1c45b4faeb5f789b0d036d02313}{Image}}\&\ other);}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_image_a0294f63700543e11c0f0da85601c7ae5}{\string~Image}}();}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_image_8h_a6140c45a6cc8b72c3676cd6776ccfc3d}{ImageState}}\ \mbox{\hyperlink{class_image_ad45fab9f6f06acd3d2f6e91082972425}{getState}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_image_a21c3ff93356c4a640de1f75b820b449a}{convertToHSL}}();}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_image_adb848077f479c5b7fd90ed9303bd0ab4}{convertToHSV}}();}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_image_a6d9205fae414588750e60df5ccaf1882}{convertToRGB}}();}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_image_a36bcae4838228d574738249a87dc4464}{getWidth}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_image_a1cd7587f88b6932b5269051d1ba08ff9}{getHeight}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_image_a821f52f44e80051e48b3f2689ba48611}{getChannels}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{class_image_a6a7d293fa8caa8ce4f486319bf996f7f}{getData}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_image_a0aeb25bfe7697458229e8217d1c505f4}{save}}(\textcolor{keyword}{const}\ std::string\ \&filename,\ \textcolor{keywordtype}{int}\ quality\ =\ 100)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_image_a03cf9cb5d1fcb221bb65869811f545b3}{setData}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}*\ data,\ \textcolor{keywordtype}{int}\ width,\ \textcolor{keywordtype}{int}\ height,\ \textcolor{keywordtype}{int}\ channels,\ \mbox{\hyperlink{_image_8h_a6140c45a6cc8b72c3676cd6776ccfc3d}{ImageState}}\ state);}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_image_a03cf9cb5d1fcb221bb65869811f545b3}{setData}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_image_a58edd1c45b4faeb5f789b0d036d02313}{Image}}\&\ other);}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ \&\mbox{\hyperlink{class_image_ae9e75f89a5b0d2a32286dc836aa61ff7}{operator()}}(\textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y,\ \textcolor{keywordtype}{int}\ channel=0);}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_image_a58edd1c45b4faeb5f789b0d036d02313}{Image}}\&\ \mbox{\hyperlink{class_image_a3037a583d17594b1835d9b6b8d09875c}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_image_a58edd1c45b4faeb5f789b0d036d02313}{Image}}\&\ other);}
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00169\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}*\ data;\ }
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ width;\ }
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ height;\ }
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ channels;\ }
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_image_8h_a6140c45a6cc8b72c3676cd6776ccfc3d}{ImageState}}\ state;\ }
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ rgbToHsl(\textcolor{keywordtype}{float}\ r,\ \textcolor{keywordtype}{float}\ g,\ \textcolor{keywordtype}{float}\ b,\ \textcolor{keywordtype}{float}\ \&h,\ \textcolor{keywordtype}{float}\ \&s,\ \textcolor{keywordtype}{float}\ \&l);}
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ rgbToHsv(\textcolor{keywordtype}{float}\ r,\ \textcolor{keywordtype}{float}\ g,\ \textcolor{keywordtype}{float}\ b,\ \textcolor{keywordtype}{float}\ \&h,\ \textcolor{keywordtype}{float}\ \&s,\ \textcolor{keywordtype}{float}\ \&v);}
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ hsvToRgb(\textcolor{keywordtype}{float}\ h,\ \textcolor{keywordtype}{float}\ s,\ \textcolor{keywordtype}{float}\ v,\ \textcolor{keywordtype}{float}\ \&r,\ \textcolor{keywordtype}{float}\ \&g,\ \textcolor{keywordtype}{float}\ \&b);}
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ hslToRgb(\textcolor{keywordtype}{float}\ h,\ \textcolor{keywordtype}{float}\ s,\ \textcolor{keywordtype}{float}\ l,\ \textcolor{keywordtype}{float}\ \&r,\ \textcolor{keywordtype}{float}\ \&g,\ \textcolor{keywordtype}{float}\ \&b);}
+\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ hslToHsv(\textcolor{keywordtype}{float}\ h,\ \textcolor{keywordtype}{float}\ s,\ \textcolor{keywordtype}{float}\ l,\ \textcolor{keywordtype}{float}\ \&hh,\ \textcolor{keywordtype}{float}\ \&ss,\ \textcolor{keywordtype}{float}\ \&vv);}
+\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ hsvToHsl(\textcolor{keywordtype}{float}\ h,\ \textcolor{keywordtype}{float}\ s,\ \textcolor{keywordtype}{float}\ v,\ \textcolor{keywordtype}{float}\ \&hh,\ \textcolor{keywordtype}{float}\ \&ss,\ \textcolor{keywordtype}{float}\ \&ll);}
+\DoxyCodeLine{00205\ \ \ \ \ \};}
+\DoxyCodeLine{00206\ \ \ \ \ }
+\DoxyCodeLine{00207\ }
+\DoxyCodeLine{00208\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ IMAGE\_H}}
+
+\end{DoxyCode}

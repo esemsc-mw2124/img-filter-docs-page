@@ -1,0 +1,36 @@
+\doxysection{Filter.\+h}
+\hypertarget{_filter_8h_source}{}\label{_filter_8h_source}\index{src/Filter.h@{src/Filter.h}}
+\mbox{\hyperlink{_filter_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ @file\ Filter.h}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ @brief\ Header\ file\ for\ filter\ interface\ used\ in\ image\ and\ volume\ processing.}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ Group\ name:\ Bisection}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ }}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *\ @authors}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *\ -\/\ Vera\ Fan\ (esemsc-\/3f9bc883)}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *\ -\/\ Jiawei\ Zhan\ (esemsc-\/jz1224)}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *\ -\/\ Simranjeet\ Singh\ (esemsc-\/ss2524)}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ -\/\ George\ Sokolik\ (esemsc-\/gts124)}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ -\/\ Qihan\ Zhang\ (esemsc-\/qz624)}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *\ -\/\ Yixiao\ Zheng\ (esemsc-\/yz1824)}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ -\/\ Miles\ Weberman\ (esemsc-\/mw2124)}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ ******************************************************************************/}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{comment}{//\ Filter.h}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#ifndef\ FILTER\_H}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#define\ FILTER\_H}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_image_8h}{Image.h}}"{}}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_volume_8h}{Volume.h}}"{}}}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00030\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_filter}{Filter}}\ \{}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_filter_a9d4dd1ead47bb006091b941063e5898f}{apply}}(\mbox{\hyperlink{class_image}{Image}}\&\ img)\ =\ 0;\ \ \textcolor{comment}{//\ For\ 2D\ images}}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_filter_a4fb0a1b8a0d4e16b166a2c83b19315dd}{apply}}(\mbox{\hyperlink{class_volume}{Volume}}\&\ vol)\ =\ 0;\ \textcolor{comment}{//\ For\ 3D\ volumes}}
+\DoxyCodeLine{00043\ \ \ \ \ \};}
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ FILTER\_H}}
+
+\end{DoxyCode}

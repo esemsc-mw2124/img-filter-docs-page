@@ -1,0 +1,125 @@
+\doxysection{Blur\+Filter3D Class Reference}
+\hypertarget{class_blur_filter3_d}{}\label{class_blur_filter3_d}\index{BlurFilter3D@{BlurFilter3D}}
+
+
+A filter class for applying 3D blurring techniques to volumetric data.  
+
+
+
+
+{\ttfamily \#include $<$Blur\+Filter3\+D.\+h$>$}
+
+Inheritance diagram for Blur\+Filter3D\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_blur_filter3_d}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_blur_filter3_d_a4809cf7392e9127cba3d8c531a9949e5}{Blur\+Filter3D}} (\mbox{\hyperlink{_blur_filter3_d_8h_a612be3f267546e67cc8c30426b905e50}{Filter3\+DType}} type, const \mbox{\hyperlink{struct_filter3_d_parameters}{Filter3\+DParameters}} \&params)
+\begin{DoxyCompactList}\small\item\em Constructs a 3D blur filter with specified parameters. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_blur_filter3_d_a634c92cd2b675574ed63c355cf2dfa0f}{Blur\+Filter3D}} (\mbox{\hyperlink{_blur_filter3_d_8h_a612be3f267546e67cc8c30426b905e50}{Filter3\+DType}} type)
+\begin{DoxyCompactList}\small\item\em Constructs a 3D blur filter with default parameters. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_blur_filter3_d_af8befe1004ad53731e608263464068b6}{apply}} (\mbox{\hyperlink{class_volume}{Volume}} \&volume) override
+\begin{DoxyCompactList}\small\item\em Applies the selected 3D blur filter to a volumetric dataset. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_blur_filter3_d_af835ee8f595a217c37c7771c956a42a6}{apply}} (\mbox{\hyperlink{class_image}{Image}} \&img) override
+\begin{DoxyCompactList}\small\item\em Throws an exception, as 2D image processing is not supported. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A filter class for applying 3D blurring techniques to volumetric data. 
+
+Supports Gaussian and median blurring for 3D volumes. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_blur_filter3_d_a4809cf7392e9127cba3d8c531a9949e5}\index{BlurFilter3D@{BlurFilter3D}!BlurFilter3D@{BlurFilter3D}}
+\index{BlurFilter3D@{BlurFilter3D}!BlurFilter3D@{BlurFilter3D}}
+\doxysubsubsection{\texorpdfstring{BlurFilter3D()}{BlurFilter3D()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_blur_filter3_d_a4809cf7392e9127cba3d8c531a9949e5} 
+Blur\+Filter3\+D\+::\+Blur\+Filter3D (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_blur_filter3_d_8h_a612be3f267546e67cc8c30426b905e50}{Filter3\+DType}}}]{type}{, }\item[{const \mbox{\hyperlink{struct_filter3_d_parameters}{Filter3\+DParameters}} \&}]{params}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructs a 3D blur filter with specified parameters. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & The type of 3D blur filter to apply. \\
+\hline
+{\em params} & The parameters for the blur effect. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_blur_filter3_d_a634c92cd2b675574ed63c355cf2dfa0f}\index{BlurFilter3D@{BlurFilter3D}!BlurFilter3D@{BlurFilter3D}}
+\index{BlurFilter3D@{BlurFilter3D}!BlurFilter3D@{BlurFilter3D}}
+\doxysubsubsection{\texorpdfstring{BlurFilter3D()}{BlurFilter3D()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_blur_filter3_d_a634c92cd2b675574ed63c355cf2dfa0f} 
+Blur\+Filter3\+D\+::\+Blur\+Filter3D (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_blur_filter3_d_8h_a612be3f267546e67cc8c30426b905e50}{Filter3\+DType}}}]{type}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructs a 3D blur filter with default parameters. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & The type of 3D blur filter to apply. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_blur_filter3_d_af835ee8f595a217c37c7771c956a42a6}\index{BlurFilter3D@{BlurFilter3D}!apply@{apply}}
+\index{apply@{apply}!BlurFilter3D@{BlurFilter3D}}
+\doxysubsubsection{\texorpdfstring{apply()}{apply()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_blur_filter3_d_af835ee8f595a217c37c7771c956a42a6} 
+void Blur\+Filter3\+D\+::apply (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_image}{Image}} \&}]{img}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Throws an exception, as 2D image processing is not supported. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em img} & The image to which the filter cannot be applied. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error} & Always throws since 2D filtering is not supported. \\
+\hline
+\end{DoxyExceptions}
+
+
+Implements \mbox{\hyperlink{class_filter_a9d4dd1ead47bb006091b941063e5898f}{Filter}}.
+
+\Hypertarget{class_blur_filter3_d_af8befe1004ad53731e608263464068b6}\index{BlurFilter3D@{BlurFilter3D}!apply@{apply}}
+\index{apply@{apply}!BlurFilter3D@{BlurFilter3D}}
+\doxysubsubsection{\texorpdfstring{apply()}{apply()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_blur_filter3_d_af8befe1004ad53731e608263464068b6} 
+void Blur\+Filter3\+D\+::apply (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_volume}{Volume}} \&}]{volume}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Applies the selected 3D blur filter to a volumetric dataset. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em volume} & The volume to be processed. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::invalid\+\_\+argument} & If an unknown filter type is provided. \\
+\hline
+\end{DoxyExceptions}
+
+
+Implements \mbox{\hyperlink{class_filter_a4fb0a1b8a0d4e16b166a2c83b19315dd}{Filter}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/3\+D/\mbox{\hyperlink{_blur_filter3_d_8h}{Blur\+Filter3\+D.\+h}}\item 
+src/3\+D/\mbox{\hyperlink{_blur_filter3_d_8cpp}{Blur\+Filter3\+D.\+cpp}}\end{DoxyCompactItemize}

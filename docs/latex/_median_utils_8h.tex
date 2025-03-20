@@ -1,0 +1,39 @@
+\doxysection{src/utils/\+Median\+Utils.h File Reference}
+\hypertarget{_median_utils_8h}{}\label{_median_utils_8h}\index{src/utils/MedianUtils.h@{src/utils/MedianUtils.h}}
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include $<$iterator$>$}\newline
+{\ttfamily \#include $<$cstdlib$>$}\newline
+{\ttfamily \#include $<$ctime$>$}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename Iterator$>$ }\\Iterator \mbox{\hyperlink{_median_utils_8h_a27954f1377b54471ab75b848dc37fb77}{partition}} (Iterator left, Iterator right)
+\item 
+{\footnotesize template$<$typename Iterator$>$ }\\Iterator \mbox{\hyperlink{_median_utils_8h_a4db6c386956149705af01b77a1113028}{quickselect}} (Iterator left, Iterator right, int k)
+\item 
+{\footnotesize template$<$typename Iterator$>$ }\\std\+::iterator\+\_\+traits$<$ Iterator $>$\+::value\+\_\+type \mbox{\hyperlink{_median_utils_8h_a2f1e6c2fd01b46482368ec4987db90ca}{find\+Median}} (Iterator begin, Iterator end)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_median_utils_8h_a2f1e6c2fd01b46482368ec4987db90ca}\index{MedianUtils.h@{MedianUtils.h}!findMedian@{findMedian}}
+\index{findMedian@{findMedian}!MedianUtils.h@{MedianUtils.h}}
+\doxysubsubsection{\texorpdfstring{findMedian()}{findMedian()}}
+{\footnotesize\ttfamily \label{_median_utils_8h_a2f1e6c2fd01b46482368ec4987db90ca} 
+template$<$typename Iterator$>$ \\
+std\+::iterator\+\_\+traits$<$ Iterator $>$\+::value\+\_\+type find\+Median (\begin{DoxyParamCaption}\item[{Iterator}]{begin}{, }\item[{Iterator}]{end}{}\end{DoxyParamCaption})}
+
+\Hypertarget{_median_utils_8h_a27954f1377b54471ab75b848dc37fb77}\index{MedianUtils.h@{MedianUtils.h}!partition@{partition}}
+\index{partition@{partition}!MedianUtils.h@{MedianUtils.h}}
+\doxysubsubsection{\texorpdfstring{partition()}{partition()}}
+{\footnotesize\ttfamily \label{_median_utils_8h_a27954f1377b54471ab75b848dc37fb77} 
+template$<$typename Iterator$>$ \\
+Iterator partition (\begin{DoxyParamCaption}\item[{Iterator}]{left}{, }\item[{Iterator}]{right}{}\end{DoxyParamCaption})}
+
+\Hypertarget{_median_utils_8h_a4db6c386956149705af01b77a1113028}\index{MedianUtils.h@{MedianUtils.h}!quickselect@{quickselect}}
+\index{quickselect@{quickselect}!MedianUtils.h@{MedianUtils.h}}
+\doxysubsubsection{\texorpdfstring{quickselect()}{quickselect()}}
+{\footnotesize\ttfamily \label{_median_utils_8h_a4db6c386956149705af01b77a1113028} 
+template$<$typename Iterator$>$ \\
+Iterator quickselect (\begin{DoxyParamCaption}\item[{Iterator}]{left}{, }\item[{Iterator}]{right}{, }\item[{int}]{k}{}\end{DoxyParamCaption})}
+

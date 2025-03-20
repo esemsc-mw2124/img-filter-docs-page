@@ -1,0 +1,108 @@
+\doxysection{Median\+Utils.\+h}
+\hypertarget{_median_utils_8h_source}{}\label{_median_utils_8h_source}\index{src/utils/MedianUtils.h@{src/utils/MedianUtils.h}}
+\mbox{\hyperlink{_median_utils_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ Group\ Name:\ Bisection}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ }}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ Group\ Members:}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ 1.\ Vera\ Fan\ (esemsc-\/3f9bc883)}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ 2.\ Jiawei\ Zhan\ (esemsc-\/jz1224)}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *\ 3.\ Simranjeet\ Singh\ (esemsc-\/ss2524)}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *\ 4.\ George\ Sokolik\ (esemsc-\/gts124)}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *\ 5.\ Qihan\ Zhang\ (esemsc-\/qz624)}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *\ 6.\ Yixiao\ Zheng\ (esemsc-\/yz1824)}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ 7.\ Miles\ Weberman\ (esemsc-\/mw2124)}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ ******************************************************************************/}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#ifndef\ MEDIAN\_UTILS\_H}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#define\ MEDIAN\_UTILS\_H}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ <algorithm>}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ <iterator>}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ <cstdlib>}\ \ \textcolor{comment}{//\ For\ rand()\ and\ srand()}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ <ctime>}\ \ \ \ \textcolor{comment}{//\ For\ time()}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{comment}{//\ Partition\ function\ (Hoare's\ partitioning\ scheme)}}
+\DoxyCodeLine{00024\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Iterator>}
+\DoxyCodeLine{00025\ Iterator\ \mbox{\hyperlink{_median_utils_8h_a27954f1377b54471ab75b848dc37fb77}{partition}}(Iterator\ left,\ Iterator\ right)\ \{}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{comment}{//\ Choose\ a\ random\ pivot}}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keyword}{auto}\ pivotIndex\ =\ left\ +\ rand()\ \%\ (right\ -\/\ left);}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keyword}{auto}\ pivotValue\ =\ *pivotIndex;}
+\DoxyCodeLine{00029\ \ \ \ \ }
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{comment}{//\ Move\ pivot\ to\ the\ end\ temporarily}}
+\DoxyCodeLine{00031\ \ \ \ \ iter\_swap(pivotIndex,\ right\ -\/\ 1);}
+\DoxyCodeLine{00032\ \ \ \ \ }
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{comment}{//\ Partition\ elements}}
+\DoxyCodeLine{00034\ \ \ \ \ Iterator\ storeIndex\ =\ left;}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordflow}{for}\ (Iterator\ it\ =\ left;\ it\ <\ right\ -\/\ 1;\ ++it)\ \{}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (*it\ <\ pivotValue)\ \{}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ iter\_swap(it,\ storeIndex);}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ ++storeIndex;}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00040\ \ \ \ \ \}}
+\DoxyCodeLine{00041\ \ \ \ \ }
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{comment}{//\ Put\ pivot\ in\ its\ final\ place}}
+\DoxyCodeLine{00043\ \ \ \ \ iter\_swap(storeIndex,\ right\ -\/\ 1);}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordflow}{return}\ storeIndex;}
+\DoxyCodeLine{00045\ \}}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \textcolor{comment}{//\ Quickselect\ to\ find\ the\ kth\ smallest\ element\ (zero-\/based\ index)}}
+\DoxyCodeLine{00048\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Iterator>}
+\DoxyCodeLine{00049\ Iterator\ \mbox{\hyperlink{_median_utils_8h_a4db6c386956149705af01b77a1113028}{quickselect}}(Iterator\ left,\ Iterator\ right,\ \textcolor{keywordtype}{int}\ k)\ \{}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordflow}{while}\ (left\ <\ right)\ \{}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ Iterator\ pivotIndex\ =\ \mbox{\hyperlink{_median_utils_8h_a27954f1377b54471ab75b848dc37fb77}{partition}}(left,\ right);}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ pivotRank\ =\ pivotIndex\ -\/\ left;}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (pivotRank\ ==\ k)\ \{}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ pivotIndex;}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (pivotRank\ >\ k)\ \{}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ right\ =\ pivotIndex;}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ left\ =\ pivotIndex\ +\ 1;}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ k\ -\/=\ pivotRank\ +\ 1;\ \ \textcolor{comment}{//\ Adjust\ k\ for\ the\ reduced\ range}}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00062\ \ \ \ \ \}}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordflow}{return}\ left;}
+\DoxyCodeLine{00064\ \}}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Iterator>}
+\DoxyCodeLine{00067\ \textcolor{keyword}{typename}\ std::iterator\_traits<Iterator>::value\_type\ }
+\DoxyCodeLine{00068\ \mbox{\hyperlink{_median_utils_8h_a2f1e6c2fd01b46482368ec4987db90ca}{findMedian}}(Iterator\ begin,\ Iterator\ end)\ \{}
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keyword}{using\ }ValueType\ =\ \textcolor{keyword}{typename}\ std::iterator\_traits<Iterator>::value\_type;}
+\DoxyCodeLine{00070\ \ \ \ \ }
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keywordtype}{int}\ N\ =\ end\ -\/\ begin;}
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keywordflow}{if}\ (N\ ==\ 0)\ \{}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::invalid\_argument(\textcolor{stringliteral}{"{}Cannot\ find\ median\ of\ empty\ range"{}});}
+\DoxyCodeLine{00074\ \ \ \ \ \}}
+\DoxyCodeLine{00075\ \ \ \ \ }
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{comment}{//\ Use\ rand()\ instead\ of\ mt19937}}
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ seeded\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keywordflow}{if}\ (!seeded)\ \{}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ srand(\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\textcolor{keyword}{>}(time(\textcolor{keyword}{nullptr})));}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ seeded\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00081\ \ \ \ \ \}}
+\DoxyCodeLine{00082\ \ \ \ \ }
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keywordflow}{if}\ (N\ \%\ 2\ ==\ 1)\ \{}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Odd\ number\ of\ elements\ -\/\ find\ middle\ element}}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\mbox{\hyperlink{_median_utils_8h_a4db6c386956149705af01b77a1113028}{quickselect}}(begin,\ end,\ N\ /\ 2);}
+\DoxyCodeLine{00086\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Even\ number\ of\ elements\ -\/\ average\ of\ two\ middle\ elements}}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ Iterator\ mid1\ =\ \mbox{\hyperlink{_median_utils_8h_a4db6c386956149705af01b77a1113028}{quickselect}}(begin,\ end,\ N\ /\ 2\ -\/\ 1);}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ ValueType\ val1\ =\ *mid1;}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ Iterator\ mid2\ =\ \mbox{\hyperlink{_median_utils_8h_a4db6c386956149705af01b77a1113028}{quickselect}}(begin,\ end,\ N\ /\ 2);}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ ValueType\ val2\ =\ *mid2;}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Handle\ integer\ division\ correctly}}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (std::is\_integral<ValueType>::value)\ \{}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (val1\ +\ val2)\ /\ 2;}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (val1\ +\ val2)\ /\ 2.0;}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00099\ \ \ \ \ \}}
+\DoxyCodeLine{00100\ \}}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00102\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ MEDIAN\_UTILS\_H}}
+
+\end{DoxyCode}

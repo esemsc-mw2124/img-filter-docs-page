@@ -1,0 +1,191 @@
+\doxysection{Volume Class Reference}
+\hypertarget{class_volume}{}\label{class_volume}\index{Volume@{Volume}}
+
+
+A class for representing and managing 3D volumetric data.  
+
+
+
+
+{\ttfamily \#include $<$Volume.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_volume_a7d3bb81da95df85009b9f3ddd985cd9f}{Volume}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_volume_abf8cc6432a63589b7abc315c708fcfa9}{Volume}} (const std\+::string \&folder\+Path, const std\+::string \&file\+Prefix, int start\+Idx, int end\+Idx, const std\+::string \&file\+Extension)
+\begin{DoxyCompactList}\small\item\em Constructs a volume from a sequence of image slices. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_volume_ad5d2015f5c0fea005f02be8f6d60b212}{\texorpdfstring{$\sim$}{\string~}\+Volume}} ()
+\begin{DoxyCompactList}\small\item\em Destructor to free allocated memory. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_volume_8h_afe6214172a8f4085f7b16ce6523dcf7f}{Volume\+State}} \mbox{\hyperlink{class_volume_a5885b62889fb853b680c93088ada04b9}{get\+State}} () const
+\begin{DoxyCompactList}\small\item\em Gets the current state of the volume. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_volume_a6421ea4fb9b499e51499531dbc6999d5}{get\+Width}} () const
+\begin{DoxyCompactList}\small\item\em Gets the width of the volume. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_volume_a33c75b641d988efed2ce4d2568e7269e}{get\+Height}} () const
+\begin{DoxyCompactList}\small\item\em Gets the height of the volume. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_volume_ab082670ea100c39d94fefc77ac83c4d8}{get\+Depth}} () const
+\begin{DoxyCompactList}\small\item\em Gets the depth of the volume (number of slices). \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_volume_a300a981d248f8d6a613d6344bceb82e9}{get\+Channels}} () const
+\begin{DoxyCompactList}\small\item\em Gets the number of channels in the volume. \end{DoxyCompactList}\item 
+const unsigned char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_volume_a64b871950ed2af2e5107b94154df5927}{get\+Data}} () const
+\begin{DoxyCompactList}\small\item\em Gets the raw volume data. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_volume_a821c5e654180a21a6e165cd5fedbc218}{save\+Slices}} (const std\+::string \&output\+Folder, int quality, const std\+::string \&file\+Extension) const
+\begin{DoxyCompactList}\small\item\em Saves all slices of the volume as images. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A class for representing and managing 3D volumetric data. 
+
+Supports loading volumes from image slices, retrieving volume properties, and saving slices as 2D images. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_volume_a7d3bb81da95df85009b9f3ddd985cd9f}\index{Volume@{Volume}!Volume@{Volume}}
+\index{Volume@{Volume}!Volume@{Volume}}
+\doxysubsubsection{\texorpdfstring{Volume()}{Volume()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_volume_a7d3bb81da95df85009b9f3ddd985cd9f} 
+Volume\+::\+Volume (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Default constructor. 
+
+\Hypertarget{class_volume_abf8cc6432a63589b7abc315c708fcfa9}\index{Volume@{Volume}!Volume@{Volume}}
+\index{Volume@{Volume}!Volume@{Volume}}
+\doxysubsubsection{\texorpdfstring{Volume()}{Volume()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_volume_abf8cc6432a63589b7abc315c708fcfa9} 
+Volume\+::\+Volume (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{folder\+Path}{, }\item[{const std\+::string \&}]{file\+Prefix}{, }\item[{int}]{start\+Idx}{, }\item[{int}]{end\+Idx}{, }\item[{const std\+::string \&}]{file\+Extension}{}\end{DoxyParamCaption})}
+
+
+
+Constructs a volume from a sequence of image slices. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em folder\+Path} & Path to the folder containing image slices. \\
+\hline
+{\em file\+Prefix} & Prefix of the image files. \\
+\hline
+{\em start\+Idx} & Index of the first image slice. \\
+\hline
+{\em end\+Idx} & Index of the last image slice. \\
+\hline
+{\em file\+Extension} & Extension of the image files (e.\+g., .png, .jpg). \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_volume_ad5d2015f5c0fea005f02be8f6d60b212}\index{Volume@{Volume}!````~Volume@{\texorpdfstring{$\sim$}{\string~}Volume}}
+\index{````~Volume@{\texorpdfstring{$\sim$}{\string~}Volume}!Volume@{Volume}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Volume()}{\string~Volume()}}
+{\footnotesize\ttfamily \label{class_volume_ad5d2015f5c0fea005f02be8f6d60b212} 
+Volume\+::\texorpdfstring{$\sim$}{\string~}\+Volume (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Destructor to free allocated memory. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_volume_a300a981d248f8d6a613d6344bceb82e9}\index{Volume@{Volume}!getChannels@{getChannels}}
+\index{getChannels@{getChannels}!Volume@{Volume}}
+\doxysubsubsection{\texorpdfstring{getChannels()}{getChannels()}}
+{\footnotesize\ttfamily \label{class_volume_a300a981d248f8d6a613d6344bceb82e9} 
+int Volume\+::get\+Channels (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Gets the number of channels in the volume. 
+
+\begin{DoxyReturn}{Returns}
+The number of channels. 
+\end{DoxyReturn}
+\Hypertarget{class_volume_a64b871950ed2af2e5107b94154df5927}\index{Volume@{Volume}!getData@{getData}}
+\index{getData@{getData}!Volume@{Volume}}
+\doxysubsubsection{\texorpdfstring{getData()}{getData()}}
+{\footnotesize\ttfamily \label{class_volume_a64b871950ed2af2e5107b94154df5927} 
+const unsigned char \texorpdfstring{$\ast$}{*} Volume\+::get\+Data (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Gets the raw volume data. 
+
+\begin{DoxyReturn}{Returns}
+A pointer to the volume data. 
+\end{DoxyReturn}
+\Hypertarget{class_volume_ab082670ea100c39d94fefc77ac83c4d8}\index{Volume@{Volume}!getDepth@{getDepth}}
+\index{getDepth@{getDepth}!Volume@{Volume}}
+\doxysubsubsection{\texorpdfstring{getDepth()}{getDepth()}}
+{\footnotesize\ttfamily \label{class_volume_ab082670ea100c39d94fefc77ac83c4d8} 
+int Volume\+::get\+Depth (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Gets the depth of the volume (number of slices). 
+
+\begin{DoxyReturn}{Returns}
+The depth in slices. 
+\end{DoxyReturn}
+\Hypertarget{class_volume_a33c75b641d988efed2ce4d2568e7269e}\index{Volume@{Volume}!getHeight@{getHeight}}
+\index{getHeight@{getHeight}!Volume@{Volume}}
+\doxysubsubsection{\texorpdfstring{getHeight()}{getHeight()}}
+{\footnotesize\ttfamily \label{class_volume_a33c75b641d988efed2ce4d2568e7269e} 
+int Volume\+::get\+Height (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Gets the height of the volume. 
+
+\begin{DoxyReturn}{Returns}
+The height in pixels. 
+\end{DoxyReturn}
+\Hypertarget{class_volume_a5885b62889fb853b680c93088ada04b9}\index{Volume@{Volume}!getState@{getState}}
+\index{getState@{getState}!Volume@{Volume}}
+\doxysubsubsection{\texorpdfstring{getState()}{getState()}}
+{\footnotesize\ttfamily \label{class_volume_a5885b62889fb853b680c93088ada04b9} 
+\mbox{\hyperlink{_volume_8h_afe6214172a8f4085f7b16ce6523dcf7f}{Volume\+State}} Volume\+::get\+State (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Gets the current state of the volume. 
+
+\begin{DoxyReturn}{Returns}
+The volume state. 
+\end{DoxyReturn}
+\Hypertarget{class_volume_a6421ea4fb9b499e51499531dbc6999d5}\index{Volume@{Volume}!getWidth@{getWidth}}
+\index{getWidth@{getWidth}!Volume@{Volume}}
+\doxysubsubsection{\texorpdfstring{getWidth()}{getWidth()}}
+{\footnotesize\ttfamily \label{class_volume_a6421ea4fb9b499e51499531dbc6999d5} 
+int Volume\+::get\+Width (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Gets the width of the volume. 
+
+\begin{DoxyReturn}{Returns}
+The width in pixels. 
+\end{DoxyReturn}
+\Hypertarget{class_volume_a821c5e654180a21a6e165cd5fedbc218}\index{Volume@{Volume}!saveSlices@{saveSlices}}
+\index{saveSlices@{saveSlices}!Volume@{Volume}}
+\doxysubsubsection{\texorpdfstring{saveSlices()}{saveSlices()}}
+{\footnotesize\ttfamily \label{class_volume_a821c5e654180a21a6e165cd5fedbc218} 
+void Volume\+::save\+Slices (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{output\+Folder}{, }\item[{int}]{quality}{, }\item[{const std\+::string \&}]{file\+Extension}{}\end{DoxyParamCaption}) const}
+
+
+
+Saves all slices of the volume as images. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em output\+Folder} & Path to the folder where slices will be saved. \\
+\hline
+{\em quality} & \doxylink{class_image}{Image} quality for saving (if applicable). \\
+\hline
+{\em file\+Extension} & File extension for the saved images. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\mbox{\hyperlink{_volume_8h}{Volume.\+h}}\item 
+src/\mbox{\hyperlink{_volume_8cpp}{Volume.\+cpp}}\end{DoxyCompactItemize}

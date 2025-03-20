@@ -1,0 +1,87 @@
+\doxysection{Edge\+Detector.\+h}
+\hypertarget{_edge_detector_8h_source}{}\label{_edge_detector_8h_source}\index{src/2D/EdgeDetector.h@{src/2D/EdgeDetector.h}}
+\mbox{\hyperlink{_edge_detector_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ @file\ EdgeDetector.h}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ @brief\ Header\ file\ for\ edge\ detection\ techniques.}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ Group\ name:\ Bisection}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ }}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *\ @authors}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *\ -\/\ Vera\ Fan\ (esemsc-\/3f9bc883)}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *\ -\/\ Jiawei\ Zhan\ (esemsc-\/jz1224)}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *\ -\/\ Simranjeet\ Singh\ (esemsc-\/ss2524)}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ -\/\ George\ Sokolik\ (esemsc-\/gts124)}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ -\/\ Qihan\ Zhang\ (esemsc-\/qz624)}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *\ -\/\ Yixiao\ Zheng\ (esemsc-\/yz1824)}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ -\/\ Miles\ Weberman\ (esemsc-\/mw2124)}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ ******************************************************************************/}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#ifndef\ EDGE\_DETECTOR\_H}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#define\ EDGE\_DETECTOR\_H}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_filter_8h}{../Filter.h}}"{}}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_image_8h}{../Image.h}}"{}}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ <cmath>}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ <algorithm>}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ <limits>}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ <stdexcept>}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{_edge_detector_8h_aab61f22815e3a7f08a93c6ccafb9bef8}{EdgeDetectionType}}\ \{}
+\DoxyCodeLine{00029\ \ \ \ \ \mbox{\hyperlink{_edge_detector_8h_aab61f22815e3a7f08a93c6ccafb9bef8a72e4f1a61efb42bee3f652fcf5db32b8}{Sobel}},}
+\DoxyCodeLine{00030\ \ \ \ \ \mbox{\hyperlink{_edge_detector_8h_aab61f22815e3a7f08a93c6ccafb9bef8ab0668738b1f82bdb33252275c3ce2d2d}{Prewitt}},}
+\DoxyCodeLine{00031\ \ \ \ \ \mbox{\hyperlink{_edge_detector_8h_aab61f22815e3a7f08a93c6ccafb9bef8a282e20fff4400a817ff7fd1661dbf16c}{Scharr}},}
+\DoxyCodeLine{00032\ \ \ \ \ \mbox{\hyperlink{_edge_detector_8h_aab61f22815e3a7f08a93c6ccafb9bef8a1310b75d87db634a5e7c281a35af8004}{RobertsCross}}}
+\DoxyCodeLine{00033\ \};}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00042\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_edge_detector_aa96872e3ccf6ae3f976b21bc04a4eb5d}{EdgeDetector}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_filter}{Filter}}\ \{}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_edge_detector_aa96872e3ccf6ae3f976b21bc04a4eb5d}{EdgeDetector}}(\mbox{\hyperlink{_edge_detector_8h_aab61f22815e3a7f08a93c6ccafb9bef8}{EdgeDetectionType}}\ type)\ :\ type(type)\ \{\}}
+\DoxyCodeLine{00049\ \ \ \ \ }
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_edge_detector_a9d6647da2985d2f0c1ead0810e26f85e}{apply}}(\mbox{\hyperlink{class_image}{Image}}\&\ img)\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (type)\ \{}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{_edge_detector_8h_aab61f22815e3a7f08a93c6ccafb9bef8a72e4f1a61efb42bee3f652fcf5db32b8}{EdgeDetectionType::Sobel}}:}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ applySobelEdgeDetection(img);}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{_edge_detector_8h_aab61f22815e3a7f08a93c6ccafb9bef8ab0668738b1f82bdb33252275c3ce2d2d}{EdgeDetectionType::Prewitt}}:}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ applyPrewittEdgeDetection(img);}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{_edge_detector_8h_aab61f22815e3a7f08a93c6ccafb9bef8a282e20fff4400a817ff7fd1661dbf16c}{EdgeDetectionType::Scharr}}:}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ applyScharrEdgeDetection(img);}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{_edge_detector_8h_aab61f22815e3a7f08a93c6ccafb9bef8a1310b75d87db634a5e7c281a35af8004}{EdgeDetectionType::RobertsCross}}:}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ applyRobertsCrossEdgeDetection(img);}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::invalid\_argument(\textcolor{stringliteral}{"{}Unknown\ edge\ detection\ type"{}});}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_edge_detector_a9506f2b62839043ea84f1230f36ed407}{apply}}(\mbox{\hyperlink{class_volume}{Volume}}\&\ vol)\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}EdgeDetector\ does\ not\ support\ 3D\ volumes"{}});}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00082\ \ \ \ \ }
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_edge_detector_8h_aab61f22815e3a7f08a93c6ccafb9bef8}{EdgeDetectionType}}\ type;\ }
+\DoxyCodeLine{00085\ \ \ \ \ }
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ applySobelEdgeDetection(\mbox{\hyperlink{class_image}{Image}}\&\ img);}
+\DoxyCodeLine{00091\ \ \ \ \ }
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ applyPrewittEdgeDetection(\mbox{\hyperlink{class_image}{Image}}\&\ img);}
+\DoxyCodeLine{00097\ \ \ \ \ }
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ applyScharrEdgeDetection(\mbox{\hyperlink{class_image}{Image}}\&\ img);}
+\DoxyCodeLine{00103\ \ \ \ \ }
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ applyRobertsCrossEdgeDetection(\mbox{\hyperlink{class_image}{Image}}\&\ img);}
+\DoxyCodeLine{00109\ \ \ \ \ }
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Helper\ functions}}
+\DoxyCodeLine{00111\ \ \ \ \ }
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ std::vector<std::vector<float>>\ applyConvolutionFloat(\mbox{\hyperlink{class_image}{Image}}\&\ input,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}*\ kernel,\ \textcolor{keywordtype}{int}\ kernelSize);}
+\DoxyCodeLine{00120\ \ \ \ \ }
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_image}{Image}}\ ApplyEdgeDetection(\mbox{\hyperlink{class_image}{Image}}\&\ img,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}*\ kernel\_x,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}*\ kernel\_y,\ \textcolor{keywordtype}{int}\ kernelSize);}
+\DoxyCodeLine{00130\ \};}
+\DoxyCodeLine{00131\ \ \ \ \ }
+\DoxyCodeLine{00132\ \textcolor{preprocessor}{\ \ \ \ \#endif\ }\textcolor{comment}{//\ EDGE\_DETECTOR\_H}}
+
+\end{DoxyCode}

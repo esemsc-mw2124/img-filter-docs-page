@@ -1,0 +1,145 @@
+\doxysection{Simple\+Filter Class Reference}
+\hypertarget{class_simple_filter}{}\label{class_simple_filter}\index{SimpleFilter@{SimpleFilter}}
+
+
+A filter class for applying various simple image processing operations.  
+
+
+
+
+{\ttfamily \#include $<$Simple\+Filter.\+h$>$}
+
+Inheritance diagram for Simple\+Filter\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_simple_filter}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_simple_filter_a5913f2ab2391196268c85ece3532739d}{Simple\+Filter}} (\mbox{\hyperlink{_simple_filter_8h_ac9407f0c2ed7a5fc7eddb839a8680680}{Simple\+Filter\+Type}} type, const \mbox{\hyperlink{struct_simple_filter_parameters}{Simple\+Filter\+Parameters}} \&params)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{class_simple_filter}{Simple\+Filter} with the specified type and parameters. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_simple_filter_a622e3f663a42b7a2e41dcc77727e3c8d}{Simple\+Filter}} (\mbox{\hyperlink{_simple_filter_8h_ac9407f0c2ed7a5fc7eddb839a8680680}{Simple\+Filter\+Type}} type)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{class_simple_filter}{Simple\+Filter} with default parameters. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_simple_filter_ae3816d4b633905b052a4185d3700633b}{apply}} (\mbox{\hyperlink{class_image}{Image}} \&img) override
+\begin{DoxyCompactList}\small\item\em Applies the selected filter effect to an image. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_simple_filter_a1bff7d27c852e3713f418c4213926c62}{apply}} (\mbox{\hyperlink{class_volume}{Volume}} \&vol) override
+\begin{DoxyCompactList}\small\item\em Throws an exception, as 3D volume processing is not supported. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_simple_filter_ab7f0777183c1a51a929f61e78f583a5c}{calculate\+Mean\+Brightness}} (\mbox{\hyperlink{class_image}{Image}} \&img)
+\begin{DoxyCompactList}\small\item\em Calculates the mean brightness of an image. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A filter class for applying various simple image processing operations. 
+
+Supports grayscale conversion, brightness adjustment, histogram equalization, thresholding, and adding salt-\/and-\/pepper noise. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_simple_filter_a5913f2ab2391196268c85ece3532739d}\index{SimpleFilter@{SimpleFilter}!SimpleFilter@{SimpleFilter}}
+\index{SimpleFilter@{SimpleFilter}!SimpleFilter@{SimpleFilter}}
+\doxysubsubsection{\texorpdfstring{SimpleFilter()}{SimpleFilter()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_simple_filter_a5913f2ab2391196268c85ece3532739d} 
+Simple\+Filter\+::\+Simple\+Filter (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_simple_filter_8h_ac9407f0c2ed7a5fc7eddb839a8680680}{Simple\+Filter\+Type}}}]{type}{, }\item[{const \mbox{\hyperlink{struct_simple_filter_parameters}{Simple\+Filter\+Parameters}} \&}]{params}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructs a \doxylink{class_simple_filter}{Simple\+Filter} with the specified type and parameters. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & The type of simple filter to apply. \\
+\hline
+{\em params} & The parameters for the filter effect. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_simple_filter_a622e3f663a42b7a2e41dcc77727e3c8d}\index{SimpleFilter@{SimpleFilter}!SimpleFilter@{SimpleFilter}}
+\index{SimpleFilter@{SimpleFilter}!SimpleFilter@{SimpleFilter}}
+\doxysubsubsection{\texorpdfstring{SimpleFilter()}{SimpleFilter()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_simple_filter_a622e3f663a42b7a2e41dcc77727e3c8d} 
+Simple\+Filter\+::\+Simple\+Filter (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_simple_filter_8h_ac9407f0c2ed7a5fc7eddb839a8680680}{Simple\+Filter\+Type}}}]{type}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructs a \doxylink{class_simple_filter}{Simple\+Filter} with default parameters. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & The type of simple filter to apply. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_simple_filter_ae3816d4b633905b052a4185d3700633b}\index{SimpleFilter@{SimpleFilter}!apply@{apply}}
+\index{apply@{apply}!SimpleFilter@{SimpleFilter}}
+\doxysubsubsection{\texorpdfstring{apply()}{apply()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_simple_filter_ae3816d4b633905b052a4185d3700633b} 
+void Simple\+Filter\+::apply (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_image}{Image}} \&}]{img}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Applies the selected filter effect to an image. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em img} & The image to process. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::invalid\+\_\+argument} & If an unknown filter type is provided. \\
+\hline
+\end{DoxyExceptions}
+
+
+Implements \mbox{\hyperlink{class_filter_a9d4dd1ead47bb006091b941063e5898f}{Filter}}.
+
+\Hypertarget{class_simple_filter_a1bff7d27c852e3713f418c4213926c62}\index{SimpleFilter@{SimpleFilter}!apply@{apply}}
+\index{apply@{apply}!SimpleFilter@{SimpleFilter}}
+\doxysubsubsection{\texorpdfstring{apply()}{apply()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_simple_filter_a1bff7d27c852e3713f418c4213926c62} 
+void Simple\+Filter\+::apply (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_volume}{Volume}} \&}]{vol}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Throws an exception, as 3D volume processing is not supported. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vol} & The volume to which the filter cannot be applied. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error} & Always throws since 3D filtering is not supported. \\
+\hline
+\end{DoxyExceptions}
+
+
+Implements \mbox{\hyperlink{class_filter_a4fb0a1b8a0d4e16b166a2c83b19315dd}{Filter}}.
+
+\Hypertarget{class_simple_filter_ab7f0777183c1a51a929f61e78f583a5c}\index{SimpleFilter@{SimpleFilter}!calculateMeanBrightness@{calculateMeanBrightness}}
+\index{calculateMeanBrightness@{calculateMeanBrightness}!SimpleFilter@{SimpleFilter}}
+\doxysubsubsection{\texorpdfstring{calculateMeanBrightness()}{calculateMeanBrightness()}}
+{\footnotesize\ttfamily \label{class_simple_filter_ab7f0777183c1a51a929f61e78f583a5c} 
+float Simple\+Filter\+::calculate\+Mean\+Brightness (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_image}{Image}} \&}]{img}{}\end{DoxyParamCaption})}
+
+
+
+Calculates the mean brightness of an image. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em img} & The image to analyze. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The mean brightness value. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/2\+D/\mbox{\hyperlink{_simple_filter_8h}{Simple\+Filter.\+h}}\item 
+src/2\+D/\mbox{\hyperlink{_simple_filter_8cpp}{Simple\+Filter.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,76 @@
+\doxysection{Blur.\+h}
+\hypertarget{_blur_8h_source}{}\label{_blur_8h_source}\index{src/2D/Blur.h@{src/2D/Blur.h}}
+\mbox{\hyperlink{_blur_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ @file\ Blur.h}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ @brief\ Header\ file\ for\ the\ Blur\ filter\ class.}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ Group\ name:\ Bisection}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ }}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *\ @authors}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *\ -\/\ Vera\ Fan\ (esemsc-\/3f9bc883)}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *\ -\/\ Jiawei\ Zhan\ (esemsc-\/jz1224)}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *\ -\/\ Simranjeet\ Singh\ (esemsc-\/ss2524)}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ -\/\ George\ Sokolik\ (esemsc-\/gts124)}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ -\/\ Qihan\ Zhang\ (esemsc-\/qz624)}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *\ -\/\ Yixiao\ Zheng\ (esemsc-\/yz1824)}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ -\/\ Miles\ Weberman\ (esemsc-\/mw2124)}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ ******************************************************************************/}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#ifndef\ IMAGE\_BLUR\_H}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#define\ IMAGE\_BLUR\_H}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_image_8h}{../Image.h}}"{}}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_filter_8h}{../Filter.h}}"{}}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{_blur_8h_a7924c5663f435b9481d7337eca6b7f9e}{BlurType}}\ \{}
+\DoxyCodeLine{00023\ \ \ \ \ \mbox{\hyperlink{_blur_8h_a7924c5663f435b9481d7337eca6b7f9ea3cfce651e667ab85486dd42a8185f98a}{Box}},}
+\DoxyCodeLine{00024\ \ \ \ \ \mbox{\hyperlink{_blur_8h_a7924c5663f435b9481d7337eca6b7f9eafedf7ba6075fb5526a7ace0b9385528d}{Gaussian}},}
+\DoxyCodeLine{00025\ \ \ \ \ \mbox{\hyperlink{_blur_8h_a7924c5663f435b9481d7337eca6b7f9ea66851a3adec6655a7bd563743e4a55a2}{Median}}}
+\DoxyCodeLine{00026\ \};}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_blur_parameters}{BlurParameters}}\ \{}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_blur_parameters_a3a4975d58fde36418ab729e56a9663f7}{blurSize}};\ \ \ \textcolor{comment}{//\ For\ Box\ blur}}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{struct_blur_parameters_a745e51a97f69ca6d45ba334e3e253f9b}{sigma}};\ \ \ \textcolor{comment}{//\ For\ Gaussian\ blur}}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_blur_parameters_a732e3cc269ade742d0ef7896efa9beb8}{kernelSize}};\ \textcolor{comment}{//\ For\ Gaussian\ and\ Median\ blur}}
+\DoxyCodeLine{00032\ \};}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00040\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_blur_a5486b34312d00be614a5836b5101c322}{Blur}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_filter}{Filter}}\ \{}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_blur_a5486b34312d00be614a5836b5101c322}{Blur}}(\mbox{\hyperlink{_blur_8h_a7924c5663f435b9481d7337eca6b7f9e}{BlurType}}\ type,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_blur_parameters}{BlurParameters}}\&\ params)}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ :\ type(type),\ params(params)\ \{\}}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_blur_aab598137d44d9d1c478f4b1e52aaec87}{apply}}(\mbox{\hyperlink{class_image}{Image}}\&\ img)\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (type)\ \{}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{_blur_8h_a7924c5663f435b9481d7337eca6b7f9ea3cfce651e667ab85486dd42a8185f98a}{BlurType::Box}}:}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ applyBoxBlur(img,\ params.blurSize);}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{_blur_8h_a7924c5663f435b9481d7337eca6b7f9eafedf7ba6075fb5526a7ace0b9385528d}{BlurType::Gaussian}}:}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ applyGaussianBlur(img,\ params.sigma,\ params.kernelSize);}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{_blur_8h_a7924c5663f435b9481d7337eca6b7f9ea66851a3adec6655a7bd563743e4a55a2}{BlurType::Median}}:}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ applyMedianBlur(img,\ params.kernelSize);}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::invalid\_argument(\textcolor{stringliteral}{"{}Unknown\ blur\ type"{}});}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_blur_aeac980382ce1492c53ef052a26d25363}{apply}}(\mbox{\hyperlink{class_volume}{Volume}}\&\ vol)\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}Blur\ filter\ does\ not\ support\ 3D\ volumes."{}});}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_blur_8h_a7924c5663f435b9481d7337eca6b7f9e}{BlurType}}\ type;\ \ }
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_blur_parameters}{BlurParameters}}\ params;\ }
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ applyBoxBlur(\mbox{\hyperlink{class_image}{Image}}\&\ img,\ \textcolor{keywordtype}{int}\ blurSize);}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ applyGaussianBlur(\mbox{\hyperlink{class_image}{Image}}\&\ img,\ \textcolor{keywordtype}{double}\ sigma,\ \textcolor{keywordtype}{int}\ kernelSize);}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ applyMedianBlur(\mbox{\hyperlink{class_image}{Image}}\&\ img,\ \textcolor{keywordtype}{int}\ kernelSize);}
+\DoxyCodeLine{00105\ \};}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00107\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}
