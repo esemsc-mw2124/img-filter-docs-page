@@ -1,1 +1,0 @@
-# img-filter-docs-page
